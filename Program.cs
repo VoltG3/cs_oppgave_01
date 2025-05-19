@@ -4,7 +4,7 @@ namespace cs_oppgave_01;
 class Program
 {
     // Simulating incoming *.json data
-    private static string[][] _productData = new string[][]
+    private static string[][] _productDataJSON = new string[][]
     {
         new string[] { "HDD", "100,65", "1000" },
         new string[] { "SSD", "200,32", "2000" },
@@ -14,15 +14,17 @@ class Program
     static void Main(string[] args)
     {
         Console.Clear();
+        TextFormat.Space(1);
         
         ProductData productData = new ProductData();
         
-        for (int i = 0; i < _productData.Length; i++)
+        for (int i = 0; i < _productDataJSON.Length; i++)
         {
-            productData.AddProduct(_productData[i][0], double.Parse(_productData[i][1]), int.Parse(_productData[i][2]));
+            productData.AddProduct(_productDataJSON[i][0], double.Parse(_productDataJSON[i][1]), int.Parse(_productDataJSON[i][2]));
         }
         
         productData.PrintProductData();
        
+        TextFormat.Space(1);
     }
 }

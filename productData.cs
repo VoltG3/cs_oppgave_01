@@ -26,11 +26,14 @@ public class ProductData
     // Functions
     public void PrintProductData()
     {
+        Console.WriteLine("Product data:");
         for (int i = 0; i < productName.Count; i++)
         {
-            Console.WriteLine($"Product name: { productName[i] }");
-            Console.WriteLine($"Product price: { productPrice[i] }");
-            Console.WriteLine($"Product quantity: { productQuantity[i] }");
+            Console.WriteLine(
+                $"{ productName[i] }" + 
+                $"{ productPrice[i] }" + 
+                $"{ productQuantity[i] }" +
+                $"");
         }
     }
     
