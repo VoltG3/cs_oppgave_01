@@ -24,13 +24,29 @@ public class ProductData
     }
     
     // Functions
+    private string ExtractName(string name)
+    {
+        switch (name)
+        {
+            case "HDD":
+                return "Hard Disk Driver";
+            case "SSD":
+                return "Solid State Drive";
+            case "RAM":
+                return "Random Access Memory";
+            case "CPU":
+                return "Central Processing Unit";
+            default:
+                return name;
+        }
+    }
     public void PrintProductData()
     {
         Console.WriteLine("Product data:");
         for (int i = 0; i < productName.Count; i++)
         {
             Console.WriteLine(
-                $"{ productName[i] }" + 
+                $"{ ExtractName(productName[i]) }" + 
                 $"{ productPrice[i] }" + 
                 $"{ productQuantity[i] }" +
                 $"");
@@ -38,7 +54,7 @@ public class ProductData
     }
     
     // Destructor
-    ~ProductData()
+    ~ProductData ()
     {
         productName.Clear();
         productPrice.Clear();

@@ -9,6 +9,7 @@ class Program
         new string[] { "HDD", "100,65", "1000" },
         new string[] { "SSD", "200,32", "2000" },
         new string[] { "RAM", "300,98", "3000" },
+        new string[] { "CPU", "400,75", "4000" }
     };
     
     static void Main(string[] args)
