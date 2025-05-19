@@ -14,6 +14,18 @@ public class ProductData
         productPrice.Add(price);
         productQuantity.Add(quantity);
     }
+
+    public List<string> GetAllProductData()
+    {
+        List<string> result = new List<string>();
+        for (int i = 0; i < productName.Count; i++)
+        {
+            result.Add(productName[i]);
+            result.Add(productPrice[i].ToString());
+            result.Add(productQuantity[i].ToString());
+        }
+        return result;
+    }
     
     // Constructor
     public ProductData()
@@ -42,13 +54,18 @@ public class ProductData
     }
     public void PrintProductData()
     {
-        Console.WriteLine("Product data:");
+        Console.WriteLine($"    " +
+            $"{ (char)9474, -2 }" +$"{ "Product", -25 }" + 
+            $"{ (char)9474, -2 }" +$"{ "Price", -10 }" + 
+            $"{ (char)9474, -2 }" +$"{ "Quantity" }" +
+            $"");
+        
         for (int i = 0; i < productName.Count; i++)
         {
-            Console.WriteLine(
-                $"{ ExtractName(productName[i]) }" + 
-                $"{ productPrice[i] }" + 
-                $"{ productQuantity[i] }" +
+            Console.WriteLine($"    " +
+                $"{ (char)9474, -2 }" + $"{ ExtractName(productName[i]), -25 }" + 
+                $"{ (char)9474, -2 }" + $"{ productPrice[i], -10 }" + 
+                $"{ (char)9474, -2 }" + $"{ productQuantity[i] }" +
                 $"");
         }
     }

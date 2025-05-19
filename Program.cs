@@ -14,6 +14,7 @@ class Program
     
     static void Main(string[] args)
     {
+        Console.OutputEncoding = System.Text.Encoding.UTF8;
         Console.Clear();
         TextFormat.Space(1);
         
@@ -25,7 +26,18 @@ class Program
         }
         
         productData.PrintProductData();
+        
+        
+        //
+        List<string> allProducts = productData.GetAllProductData();
+        
+        foreach (var p in allProducts)
+        {
+            Console.WriteLine(p);
+        }
        
+        TextFormat.Space(1);
+        PrintOut.DataTable(allProducts);
         TextFormat.Space(1);
     }
 }
