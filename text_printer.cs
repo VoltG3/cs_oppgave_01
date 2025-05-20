@@ -1,14 +1,10 @@
-using System.Globalization;
-
 namespace cs_oppgave_01;
 
-public record Product(string Name, int Quantity, double Price);
-public class TextPriner
+public class TextPrinter
 {
-    // Print the product data
-    public static void PrintTable(List<Product> products)
+    public static void PrintTable(List<ProductItem> products)
     {
-        // header
+        // table header
         Console.WriteLine($" { TextFormat.PaddingRight(4) }" + 
                           $"{ (char)9556 }" +
                           $"{ TextFormat.PrintHorizontalLine(26) }" +
@@ -35,13 +31,29 @@ public class TextPriner
                           $"{ (char)9571 } " +
                           $"");
         
-        // content
-        for (int i = 0; i < products.Count; i++)
+        // table content
+
+
+        foreach (var product in products)
         {
-            PrintProduct(products[i]);
+            string q1 = product.Quantities[0].ToString();
+            string q2 = product.Quantities[1].ToString();
+            string q3 = product.Quantities[2].ToString();
+            string q4 = product.Quantities[3].ToString();
+            string q5 = product.Quantities[4].ToString();
+            
+            Console.WriteLine($"{ TextFormat.PaddingRight(5) }" +
+                              $"{ (char)9553, -2 }{ product.Name, -25 }" +
+                              $"{ (char)9553 }{ q1, 6 }" + $"{ (char)160 }" +
+                              $"{ (char)9553 }{ q2, 6 }" + $"{ (char)160 }" +
+                              $"{ (char)9553 }{ q3, 6 }" + $"{ (char)160 }" +
+                              $"{ (char)9553 }{ q4, 6 }" + $"{ (char)160 }" +
+                              $"{ (char)9553 }{ q5, 6 }" + $"{ (char)160 }" +
+                              $"{ (char)9553, -2 }{ product.Price, -10 }" +
+                              $"{ (char)9553 }");
         }
         
-        // footer
+        // table footer
         Console.WriteLine($"{ TextFormat.PaddingRight(5) }" + 
                           $"{ (char)9562 }" +
                           $"{ TextFormat.PrintHorizontalLine(26) }" +
@@ -51,16 +63,5 @@ public class TextPriner
                           $"{ TextFormat.PrintHorizontalLine(11) }" +
                           $"{ (char)9565 } " +
                           $"");
-    }
-
-    // Print each line of the product data
-    private static void PrintProduct(Product product)
-    {
-            Console.WriteLine($"{ TextFormat.PaddingRight(5) }" +
-                              $"{ (char)9553, -2 }" + $"{ TextFormat.ExtractProductName(product.Name), -25 }" + 
-                              $"{ (char)9553, -2 }" + $"{ product.Quantity, -10 }" +
-                              $"{ (char)9553, -2 }" + $"{ product.Price.ToString("N2", new CultureInfo("de-DE")), -10 }" + 
-                              $"{ (char)9553, -2 }");
-        
     }
 }

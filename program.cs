@@ -32,8 +32,9 @@ class Program
         }
         
         List<ProductItem> allProducts = productStore.GetAllProductData();
-        //ProductPrinter.PrintTable(allProducts);
-       
+        TextPrinter.PrintTable(allProducts);
+        
+       /*
         foreach (var product in allProducts)
         {
             Console.WriteLine($"Product: {product.Name}");
@@ -45,7 +46,7 @@ class Program
             }
             Console.WriteLine();
         }
-        
+        */
         TextFormat.Space(1);
         ShowMessage();
         
