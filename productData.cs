@@ -15,16 +15,15 @@ public class ProductData
         productQuantity.Add(quantity);
     }
 
-    public List<string> GetAllProductData()
+    //
+    public List<Product> GetAllProductData()
     {
-        List<string> result = new List<string>();
+        List<Product> assemblyProducts = new List<Product>();
         for (int i = 0; i < productName.Count; i++)
         {
-            result.Add(productName[i]);
-            result.Add(productPrice[i].ToString());
-            result.Add(productQuantity[i].ToString());
+            assemblyProducts.Add(new Product(productName[i], productPrice[i], productQuantity[i]));
         }
-        return result;
+        return assemblyProducts;
     }
     
     // Constructor

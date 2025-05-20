@@ -27,17 +27,12 @@ class Program
         
         productData.PrintProductData();
         
-        
         //
-        List<string> allProducts = productData.GetAllProductData();
-        
-        foreach (var p in allProducts)
-        {
-            Console.WriteLine(p);
-        }
+        var products = productData.GetAllProductData();
+        ProductPrinter.PrintTable(products);
        
         TextFormat.Space(1);
-        PrintOut.DataTable(allProducts);
-        TextFormat.Space(1);
+        
+        // List<string> Add, Remove, Find, Sort, Reverse, Count, IndexOf, Contains,
     }
 }
