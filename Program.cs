@@ -1,8 +1,13 @@
 ﻿// See https://aka.ms/new-console-template for more information
 namespace cs_oppgave_01;
+using System;
+using System.Runtime.InteropServices;
 
 class Program
 {
+    [DllImport("libmymodule.so", EntryPoint = "showMessage")]
+    public static extern void ShowMessage();
+    
     // Simulating incoming *.json data
     private static string[][] _productDataJSON = new string[][]
     {
@@ -31,6 +36,7 @@ class Program
         ProductPrinter.PrintTable(products);
        
         TextFormat.Space(1);
+        ShowMessage();
         
         // List<string> Add, Remove, Find, Sort, Reverse, Count, IndexOf, Contains,
     }
