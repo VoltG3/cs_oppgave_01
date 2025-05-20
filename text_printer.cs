@@ -3,7 +3,7 @@ using System.Globalization;
 namespace cs_oppgave_01;
 
 public record Product(string Name, int Quantity, double Price);
-public class ProductPrinter
+public class TextPriner
 {
     // Print the product data
     public static void PrintTable(List<Product> products)

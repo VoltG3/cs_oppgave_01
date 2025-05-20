@@ -7,8 +7,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
     <ItemGroup>
-  	<None Update="products.json">
-    		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-  	</None>
+      <None Update="assets\products.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 </Project>
