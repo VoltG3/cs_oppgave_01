@@ -18,16 +18,15 @@ class Program
         Console.Clear();
         TextFormat.Space(1);
         
+        // Onload Products data
         ProductData productData = new ProductData();
         
         for (int i = 0; i < _productDataJSON.Length; i++)
         {
             productData.AddProduct(_productDataJSON[i][0], double.Parse(_productDataJSON[i][1]), int.Parse(_productDataJSON[i][2]));
         }
+        // end Onload Products data
         
-        productData.PrintProductData();
-        
-        //
         var products = productData.GetAllProductData();
         ProductPrinter.PrintTable(products);
        

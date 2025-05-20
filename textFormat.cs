@@ -2,7 +2,17 @@ namespace cs_oppgave_01;
 
 public class TextFormat
 {
-    private string ExtractName(string name)
+    public static string PrintHorizontalLine(int count)
+    {
+        var line = "";
+        for (int i = 0; i < count; i++)
+        {
+            line += $"{ (char)9552 }";
+        }
+        return line;
+    }
+    
+    public static string ExtractProductName(string name)
     {
         switch (name)
         {
