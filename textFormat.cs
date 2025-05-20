@@ -1,7 +1,14 @@
+using System.Globalization;
+
 namespace cs_oppgave_01;
 
 public class TextFormat
 {
+    public static void PriceFormat(float targetPrice)
+    {
+        string formattedTargetPrice = targetPrice.ToString("N2", new CultureInfo("de-DE"));
+    }
+    
     public static string PaddingRight(int count)
     {
         var line = "";
@@ -11,6 +18,7 @@ public class TextFormat
         }
         return line;
     }
+    
     public static string PrintHorizontalLine(int count)
     {
         var line = "";
@@ -37,6 +45,7 @@ public class TextFormat
                 return name;
         }
     }
+    
     public static void Space(int count)
     {
         for (int i = 0; i < count; i++)

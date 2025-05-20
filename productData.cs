@@ -5,10 +5,10 @@ public class ProductData
     // Fields
     public List<string>? productName;
     public List<int>? productQuantity;
-    public List<double>? productPrice;
+    public List<float>? productPrice;
     
     // Methods
-    public void AddProduct(string name, double price, int quantity)
+    public void AddProduct(string name, int quantity, float price)
     {
         productName.Add(name);
         productQuantity.Add(quantity);
@@ -20,11 +20,10 @@ public class ProductData
     {
         productName = new List<string>();
         productQuantity = new List<int>();
-        productPrice = new List<double>();
+        productPrice = new List<float>();
     }
     
     // Functions
-   
     public List<Product> GetAllProductData()
     {
         List<Product> assemblyProducts = new List<Product>();
@@ -34,7 +33,6 @@ public class ProductData
         }
         return assemblyProducts;
     }
-   
     
     // Destructor
     ~ProductData()

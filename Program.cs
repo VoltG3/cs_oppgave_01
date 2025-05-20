@@ -23,7 +23,7 @@ class Program
         
         for (int i = 0; i < _productDataJSON.Length; i++)
         {
-            productData.AddProduct(_productDataJSON[i][0], double.Parse(_productDataJSON[i][1]), int.Parse(_productDataJSON[i][2]));
+            productData.AddProduct(_productDataJSON[i][0], int.Parse(_productDataJSON[i][2]), float.Parse(_productDataJSON[i][1]));
         }
         // end Onload Products data
         
