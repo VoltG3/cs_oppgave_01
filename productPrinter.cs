@@ -7,7 +7,7 @@ public class ProductPrinter
     public static void PrintTable(List<Product> products)
     {
         // header
-        Console.WriteLine($"    " + 
+        Console.WriteLine($" { TextFormat.PaddingRight(4) }" + 
                           $"{ (char)9556 }" +
                           $"{ TextFormat.PrintHorizontalLine(26) }" +
                           $"{ (char)9574 }" +
@@ -17,13 +17,13 @@ public class ProductPrinter
                           $"{ (char)9559} " +
                           $"");
         
-        Console.WriteLine($"    " +
+        Console.WriteLine($"{ TextFormat.PaddingRight(5) }" +
                           $"{ (char)9553, -2 }" +$"{ "Product", -25 }" + 
                           $"{ (char)9553, -2 }" +$"{ "Quantity", -10 }" +
                           $"{ (char)9553, -2 }" +$"{ "Price", -10 }" + 
                           $"{ (char)9553 }");
         
-        Console.WriteLine($"    " + 
+        Console.WriteLine($"{ TextFormat.PaddingRight(5) }" + 
                           $"{ (char)9567 }" +
                           $"{ TextFormat.PrintHorizontalLine(26) }" +
                           $"{ (char)9580 }" +
@@ -40,7 +40,7 @@ public class ProductPrinter
         }
         
         // footer
-        Console.WriteLine($"    " + 
+        Console.WriteLine($"{ TextFormat.PaddingRight(5) }" + 
                           $"{ (char)9562 }" +
                           $"{ TextFormat.PrintHorizontalLine(26) }" +
                           $"{ (char)9577 }" +
@@ -54,7 +54,7 @@ public class ProductPrinter
     // Print each line of the product data
     private static void PrintProduct(Product product)
     {
-            Console.WriteLine($"    " +
+            Console.WriteLine($"{ TextFormat.PaddingRight(5) }" +
                               $"{ (char)9553, -2 }" + $"{ TextFormat.ExtractProductName(product.Name), -25 }" + 
                               $"{ (char)9553, -2 }" + $"{ product.Quantity, -10 }" +
                               $"{ (char)9553, -2 }" + $"{ product.Price, -10 }" + 

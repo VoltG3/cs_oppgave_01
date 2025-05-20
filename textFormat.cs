@@ -2,6 +2,15 @@ namespace cs_oppgave_01;
 
 public class TextFormat
 {
+    public static string PaddingRight(int count)
+    {
+        var line = "";
+        for (int i = 0; i < count; i++)
+        {
+            line += $"{ (char)160 }";
+        }
+        return line;
+    }
     public static string PrintHorizontalLine(int count)
     {
         var line = "";
