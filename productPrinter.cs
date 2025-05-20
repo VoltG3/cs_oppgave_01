@@ -1,3 +1,5 @@
+using System.Globalization;
+
 namespace cs_oppgave_01;
 
 public record Product(string Name, int Quantity, double Price);
@@ -57,7 +59,7 @@ public class ProductPrinter
             Console.WriteLine($"{ TextFormat.PaddingRight(5) }" +
                               $"{ (char)9553, -2 }" + $"{ TextFormat.ExtractProductName(product.Name), -25 }" + 
                               $"{ (char)9553, -2 }" + $"{ product.Quantity, -10 }" +
-                              $"{ (char)9553, -2 }" + $"{ product.Price, -10 }" + 
+                              $"{ (char)9553, -2 }" + $"{ product.Price.ToString("N2", new CultureInfo("de-DE")), -10 }" + 
                               $"{ (char)9553, -2 }");
         
     }

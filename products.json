@@ -1,0 +1,50 @@
+[
+  {
+    "product_name" : "hdd",
+    "product_price" : "98,78",
+    "product_quantity": {
+      "default": "1000",
+      "januar": "599",
+      "febtuar": "599",
+      "mars": "194",
+      "april": "120",
+      "mai": "7"
+    }
+  },
+  {
+    "product_name" : "ssd",
+    "product_price" : "7000,01",
+    "product_quantity": {
+      "default": "5000",
+      "januar": "5000",
+      "febtuar": "5000",
+      "mars": "4987",
+      "april": "4965",
+      "mai": "4601"
+    }
+  },
+  {
+    "product_name" : "ram",
+    "product_price" : "38,87",
+    "product_quantity": {
+      "default": "5000",
+      "januar": "4500",
+      "febtuar": "3500",
+      "mars": "2500",
+      "april": "2000",
+      "mai": "1500"
+    }
+  },
+  {
+    "product_name" : "gpu",
+    "product_price" : "17287,53",
+    "product_quantity": {
+      "default": "100",
+      "januar": "99",
+      "febtuar": "98",
+      "mars": "97",
+      "april": "96",
+      "mai": "95"
+    }
+  }
+]

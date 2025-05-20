@@ -4,11 +4,6 @@ namespace cs_oppgave_01;
 
 public class TextFormat
 {
-    public static void PriceFormat(float targetPrice)
-    {
-        string formattedTargetPrice = targetPrice.ToString("N2", new CultureInfo("de-DE"));
-    }
-    
     public static string PaddingRight(int count)
     {
         var line = "";
