@@ -29,8 +29,17 @@ public class TextPrinter
                           $"{ (char)9559 }" +
                          // $"{ TextFormat.PrintHorizontalLine(11) }" +
                          // $"{ (char)9559} " +
-                          $"");
+                          
                           // header section price
+                          $"{ TextFormat.PaddingRight(3) }" +
+                          $"{ (char)9556 }" +
+                          $"{ TextFormat.PrintHorizontalLine(15) }" +
+                          $"{ (char)9574 }" +
+                          $"{ TextFormat.PrintHorizontalLine(15) }" +
+                          $"{ (char)9574 }" +
+                          $"{ TextFormat.PrintHorizontalLine(15) }" +
+                          $"{ (char)9559 }" +
+                          $"");
                           
         string d0 = "store";
         string d1 = "jan";
@@ -50,9 +59,16 @@ public class TextPrinter
                           $"{ (char)9474, -3 }" + $"{ d4, -5 }" +
                           $"{ (char)9474, -3 }" + $"{ d5, -5 }" +
                           $"{ (char)9474, -3 }" + $"{ d6, -5 }" +
+                          $"{ (char)9553 }" +
                           //$"{ (char)9553, -2 }" +$"{ "Price", -10 }" + 
-                          $"{ (char)9553 }");
+                         
                           // header section price
+                          $"{ TextFormat.PaddingRight(3) }" +
+                          $"{ (char)9553, -2 }" + $"{ "default price", -14 }" +
+                          $"{ (char)9553, -2 }" + $"{ "status action", -14 }" +
+                          $"{ (char)9553, -2 }" + $"{ "aligned price", -14 }" +
+                          
+                          $"{ (char)9553 }");
         
         Console.WriteLine($"{ TextFormat.PaddingRight(5) }" + 
                           $"{ (char)9567 }" +
@@ -74,13 +90,17 @@ public class TextPrinter
                           $"{ (char)9571 }" +
                           //$"{ TextFormat.PrintHorizontalLine(11) }" +
                           //$"{ (char)9571 }" +
-                          $"");
-                          // header section price
                           
-                          // stack
-                          // too much left
-                          // too less left
-                          // nothing less
+                          /* header section price */
+                          $"{ TextFormat.PaddingRight(3) }" + 
+                          $"{ (char)9568 }" +
+                          $"{ TextFormat.PrintHorizontalLine(15) }" +
+                          $"{ (char)9577 }" +
+                          $"{ TextFormat.PrintHorizontalLine(15) }" +
+                          $"{ (char)9577 }" +
+                          $"{ TextFormat.PrintHorizontalLine(15) }" +
+                          $"{ (char)9571 }" +
+                          $"");
         
         // ###############
         //  table content
@@ -96,6 +116,12 @@ public class TextPrinter
             string q5 = product.Quantities[5].ToString();
             string q6 = product.Quantities[6].ToString();
             
+            // stack
+            // too much left
+            // too less left
+            // nothing less
+            // no action
+            
             Console.WriteLine($"{ TextFormat.PaddingRight(5) }" +
                               $"{ (char)9553, -2 }{ TextFormat.ExtractProductPrefix( product.Name ), -25 }" +
                               $"{ (char)9553 }" + $"{ TextFormat.Color.CY }" + $"{ q0, 6 }" + $"{ TextFormat.Color.RS }" + $"{ (char)160 }" +
@@ -104,9 +130,17 @@ public class TextPrinter
                               $"{ (char)9474 }{ q3, 6 }" + $"{ (char)160 }" +
                               $"{ (char)9474 }{ q4, 6 }" + $"{ (char)160 }" +
                               $"{ (char)9474 }{ q5, 6 }" + $"{ (char)160 }" +
-                              $"{ (char)9474 }{ q6, 6 }" + $"{ (char)160 }" +
-                              //$"{ (char)9553, -2 }{ product.Price, -10 }" +
+                              $"{ (char)9474 }{ q6, 6 }" + $"{ (char)160 }" + 
+                              $"{ (char)9553 }" +
+                              
+                              /* content section price */
+                              $"{ TextFormat.PaddingRight(3) }" + 
+                              $"{ (char)9553 }{ product.Price, 14 }" + $"{ (char)160 }" +
+                              $"{ (char)9553 }{ "TODO", 14 }" + $"{ (char)160 }" +
+                              $"{ (char)9553 }{ "TODO", 14 }" + $"{ (char)160 }" +
+                              
                               $"{ (char)9553 }");
+                              
         }
         
         // ##############
@@ -131,8 +165,15 @@ public class TextPrinter
                           $"{ (char)9575 }" +
                           $"{ TextFormat.PrintHorizontalLine(7) }" +
                           $"{ (char)9565 }" +
-                          //$"{ TextFormat.PrintHorizontalLine(11) }" +
-                          //$"{ (char)9565 } " +
+                          /* footer section price */
+                          $"{ TextFormat.PaddingRight(3) }" + 
+                          $"{ (char)9562 }" +
+                          $"{ TextFormat.PrintHorizontalLine(15) }" +
+                          $"{ (char)9577 }" +
+                          $"{ TextFormat.PrintHorizontalLine(15) }" +
+                          $"{ (char)9577 }" +
+                          $"{ TextFormat.PrintHorizontalLine(15) }" +
+                          $"{ (char)9565 }" +
                           $"");
     }
 }
