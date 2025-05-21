@@ -4,6 +4,16 @@ namespace cs_oppgave_01;
 
 public class TextFormat
 {
+
+    public static string FormatPrice(float price)
+    {
+        var culture = new CultureInfo("no-NO");
+        culture.NumberFormat.NumberDecimalSeparator = ",";
+        culture.NumberFormat.NumberGroupSeparator = ".";
+        string formatted = price.ToString("#,0.00", culture);
+        return formatted;
+    }
+
     public static class Color
     {
         public const string RS = "\u001B[0m";    // Rest

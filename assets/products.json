@@ -1,7 +1,7 @@
 [
   {
     "product_name" : "hdd",
-    "product_price" : "98,78",
+    "product_price" : "98.78",
     "product_quantity": {
       "default": "1000",
       "store1": "599",
@@ -14,7 +14,7 @@
   },
   {
     "product_name" : "ssd",
-    "product_price" : "7000,01",
+    "product_price" : "7000.01",
     "product_quantity": {
       "default": "5000",
       "store1": "5000",
@@ -40,7 +40,7 @@
   },
   {
     "product_name" : "gpu",
-    "product_price" : "17287,53",
+    "product_price" : "17287.53",
     "product_quantity": {
       "default": "100",
       "store1": "99",

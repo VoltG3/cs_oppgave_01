@@ -125,7 +125,7 @@ public class TextPrinter
                               $"{ (char)9553 }" +
                               /* content section price */
                               $"{ TextFormat.PaddingRight(3) }" + 
-                              $"{ (char)9553 }{ product.Price, 14 }" + $"{ (char)160 }" +
+                              $"{ (char)9553 }{ TextFormat.FormatPrice(product.Price), 10 }" + $" NoK" + $"{ (char)160 }" +
                               $"{ (char)9553 }{ "TODO", 14 }" + $"{ (char)160 }" +
                               $"{ (char)9553 }{ "TODO", 14 }" + $"{ (char)160 }" +
                               $"{ (char)9553 }");
