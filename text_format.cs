@@ -4,6 +4,15 @@ namespace cs_oppgave_01;
 
 public class TextFormat
 {
+    public static class Color
+    {
+        public const string RS = "\u001B[0m";    // Rest
+        public const string GR = "\u001B[32m";   // Green
+        public const string YL = "\u001B[33m";   // Yellow
+        public const string BL = "\u001B[34m";   // Blue
+        public const string PR = "\u001B[35m";   // Purple
+        public const string CY = "\u001B[36m";   // Cyan
+    }
     public static string PaddingRight(int count)
     {
         var line = "";
@@ -24,18 +33,20 @@ public class TextFormat
         return line;
     }
     
-    public static string ExtractProductName(string name)
+    public static string ExtractProductPrefix(string name)
     {
         switch (name)
         {
-            case "HDD":
+            case "hdd":
                 return "Hard Disk Driver";
-            case "SSD":
+            case "ssd":
                 return "Solid State Drive";
-            case "RAM":
+            case "ram":
                 return "Random Access Memory";
-            case "CPU":
+            case "cpu":
                 return "Central Processing Unit";
+            case "gpu":
+                return "Graphics Processing Unit";
             default:
                 return name;
         }
