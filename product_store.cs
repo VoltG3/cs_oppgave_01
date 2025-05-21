@@ -6,7 +6,6 @@ public class ProductStore
     public List<string>? productName { get; set; } = new List<string>();
     public List<List<int>>? productQuantities { get; set; } = new List<List<int>>();
     public List<float>? productPrice { get; set; } = new List<float>();
-
     
     // Methods
     public void AddProduct(string name, List<int> quantities, float price)

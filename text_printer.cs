@@ -61,8 +61,11 @@ public class TextPrinter
                           $"{ (char)9553, -2 }" + $"{ "default price", -14 }" +
                           $"{ (char)9553, -2 }" + $"{ "status action", -14 }" +
                           $"{ (char)9553, -2 }" + $"{ "aligned price", -14 }" +
+                          $"{ (char)9553 }" +
                           
-                          $"{ (char)9553 }");
+                          $"{"R", 2}" +
+                          
+                          $"");
         
         Console.WriteLine($"{ TextFormat.PaddingRight(5) }" + 
                           $"{ (char)9567 }" +
@@ -116,19 +119,23 @@ public class TextPrinter
             Console.WriteLine($"{ TextFormat.PaddingRight(5) }" +
                               $"{ (char)9553, -2 }{ TextFormat.ExtractProductPrefix( product.Name ), -27 }" +
                               $"{ (char)9553 }" + $"{ TextFormat.Color.CY }" + $"{ q0, 6 }" + $"{ TextFormat.Color.RS }" + $"{ (char)160 }" +
-                              $"{ (char)9474 }{ q1, 6 }" + $"{ (char)160 }" +
-                              $"{ (char)9474 }{ q2, 6 }" + $"{ (char)160 }" +
-                              $"{ (char)9474 }{ q3, 6 }" + $"{ (char)160 }" +
-                              $"{ (char)9474 }{ q4, 6 }" + $"{ (char)160 }" +
-                              $"{ (char)9474 }{ q5, 6 }" + $"{ (char)160 }" +
-                              $"{ (char)9474 }{ q6, 6 }" + $"{ (char)160 }" + 
+                              $"{ (char)9474 }{ TextFormat.QuantityBalance(q0,  q1) }" + $"{ q1, 6 }" + $"{ TextFormat.Color.RS }" + $"{ (char)160 }" + 
+                              $"{ (char)9474 }{ TextFormat.QuantityBalance(q0,  q2) }" + $"{ q2, 6 }" + $"{ TextFormat.Color.RS }" + $"{ (char)160 }" +
+                              $"{ (char)9474 }{ TextFormat.QuantityBalance(q0,  q3) }" + $"{ q3, 6 }" + $"{ TextFormat.Color.RS }" + $"{ (char)160 }" +
+                              $"{ (char)9474 }{ TextFormat.QuantityBalance(q0,  q4) }" + $"{ q4, 6 }" + $"{ TextFormat.Color.RS }" + $"{ (char)160 }" +
+                              $"{ (char)9474 }{ TextFormat.QuantityBalance(q0,  q5) }" + $"{ q5, 6 }" + $"{ TextFormat.Color.RS }" + $"{ (char)160 }" +
+                              $"{ (char)9474 }{ TextFormat.QuantityBalance(q0,  q6) }" + $"{ q6, 6 }" + $"{ TextFormat.Color.RS }" + $"{ (char)160 }" + 
                               $"{ (char)9553 }" +
                               /* content section price */
                               $"{ TextFormat.PaddingRight(3) }" + 
                               $"{ (char)9553 }{ TextFormat.FormatPrice(product.Price), 10 }" + $" NoK" + $"{ (char)160 }" +
                               $"{ (char)9553 }{ "TODO", 14 }" + $"{ (char)160 }" +
                               $"{ (char)9553 }{ "TODO", 14 }" + $"{ (char)160 }" +
-                              $"{ (char)9553 }");
+                              $"{ (char)9553 }" +
+                              
+                              $"{ product.PriceProtectionRange, 2 }" +
+                              
+                              $"");
         }
         
         // ##############

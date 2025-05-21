@@ -4,6 +4,14 @@ namespace cs_oppgave_01;
 
 public class TextFormat
 {
+    public static string QuantityBalance(string store, string index)
+    {
+        if (int.Parse(store) == int.Parse(index))
+        {
+            return Color.RD;
+        }
+        return Color.RS;
+    }
 
     public static string FormatPrice(float price)
     {
@@ -22,6 +30,7 @@ public class TextFormat
         public const string BL = "\u001B[34m";   // Blue
         public const string PR = "\u001B[35m";   // Purple
         public const string CY = "\u001B[36m";   // Cyan
+        public const string RD = "\u001B[31m";   // Red
     }
     public static string PaddingRight(int count)
     {

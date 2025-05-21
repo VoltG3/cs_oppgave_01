@@ -6,6 +6,8 @@ public class ProductItem
     public List<int> Quantities { get; set; }
     public float Price { get; set; }
     
+    public int PriceProtectionRange => Price > 8000 ? 1 : Price > 4000 ? 2 : 3;
+    
     public ProductItem(string name, List<int> quantities, float price)
     {
         Name = name;
