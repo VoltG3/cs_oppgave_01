@@ -27,9 +27,6 @@ public class TextPrinter
                           $"{ (char)9572 }" +
                           $"{ TextFormat.PrintHorizontalLine(7) }" +
                           $"{ (char)9559 }" +
-                         // $"{ TextFormat.PrintHorizontalLine(11) }" +
-                         // $"{ (char)9559} " +
-                          
                           // header section price
                           $"{ TextFormat.PaddingRight(3) }" +
                           $"{ (char)9556 }" +
@@ -51,7 +48,6 @@ public class TextPrinter
         
         Console.WriteLine($"{ TextFormat.PaddingRight(5) }" +
                           $"{ (char)9553, -2 }" +$"{ "Product", -25 }" + 
-                          //$"{ (char)9553, -2 }" +$"{ "Quantity", -10 }" +
                           $"{ (char)9553, -2 }" + $"{ TextFormat.Color.CY }" + $"{ d0, -6 }" + $"{ TextFormat.Color.RS }" +
                           $"{ (char)9474, -3 }" + $"{ d1, -5 }" +
                           $"{ (char)9474, -3 }" + $"{ d2, -5 }" +
@@ -60,8 +56,6 @@ public class TextPrinter
                           $"{ (char)9474, -3 }" + $"{ d5, -5 }" +
                           $"{ (char)9474, -3 }" + $"{ d6, -5 }" +
                           $"{ (char)9553 }" +
-                          //$"{ (char)9553, -2 }" +$"{ "Price", -10 }" + 
-                         
                           // header section price
                           $"{ TextFormat.PaddingRight(3) }" +
                           $"{ (char)9553, -2 }" + $"{ "default price", -14 }" +
@@ -88,9 +82,6 @@ public class TextPrinter
                           $"{ (char)9578 }" +
                           $"{ TextFormat.PrintHorizontalLine(7) }" +
                           $"{ (char)9571 }" +
-                          //$"{ TextFormat.PrintHorizontalLine(11) }" +
-                          //$"{ (char)9571 }" +
-                          
                           /* header section price */
                           $"{ TextFormat.PaddingRight(3) }" + 
                           $"{ (char)9568 }" +
@@ -132,15 +123,12 @@ public class TextPrinter
                               $"{ (char)9474 }{ q5, 6 }" + $"{ (char)160 }" +
                               $"{ (char)9474 }{ q6, 6 }" + $"{ (char)160 }" + 
                               $"{ (char)9553 }" +
-                              
                               /* content section price */
                               $"{ TextFormat.PaddingRight(3) }" + 
                               $"{ (char)9553 }{ product.Price, 14 }" + $"{ (char)160 }" +
                               $"{ (char)9553 }{ "TODO", 14 }" + $"{ (char)160 }" +
                               $"{ (char)9553 }{ "TODO", 14 }" + $"{ (char)160 }" +
-                              
                               $"{ (char)9553 }");
-                              
         }
         
         // ##############
