@@ -11,7 +11,7 @@ public class TextPrinter
         
         Console.WriteLine($" { TextFormat.PaddingRight(4) }" + 
                           $"{ (char)9556 }" +
-                          $"{ TextFormat.PrintHorizontalLine(26) }" +
+                          $"{ TextFormat.PrintHorizontalLine(28) }" +
                           $"{ (char)9574 }" +
                           $"{ TextFormat.PrintHorizontalLine(7) }" +
                           $"{ (char)9572 }" +
@@ -47,7 +47,7 @@ public class TextPrinter
         string d6 = "jun";
         
         Console.WriteLine($"{ TextFormat.PaddingRight(5) }" +
-                          $"{ (char)9553, -2 }" +$"{ "Product", -25 }" + 
+                          $"{ (char)9553, -2 }" +$"{ "Product", -27 }" + 
                           $"{ (char)9553, -2 }" + $"{ TextFormat.Color.CY }" + $"{ d0, -6 }" + $"{ TextFormat.Color.RS }" +
                           $"{ (char)9474, -3 }" + $"{ d1, -5 }" +
                           $"{ (char)9474, -3 }" + $"{ d2, -5 }" +
@@ -66,7 +66,7 @@ public class TextPrinter
         
         Console.WriteLine($"{ TextFormat.PaddingRight(5) }" + 
                           $"{ (char)9567 }" +
-                          $"{ TextFormat.PrintHorizontalLine(26) }" +
+                          $"{ TextFormat.PrintHorizontalLine(28) }" +
                           $"{ (char)9580 }" +
                           $"{ TextFormat.PrintHorizontalLine(7) }" +
                           $"{ (char)9578 }" +
@@ -86,9 +86,9 @@ public class TextPrinter
                           $"{ TextFormat.PaddingRight(3) }" + 
                           $"{ (char)9568 }" +
                           $"{ TextFormat.PrintHorizontalLine(15) }" +
-                          $"{ (char)9577 }" +
+                          $"{ (char)9580 }" +
                           $"{ TextFormat.PrintHorizontalLine(15) }" +
-                          $"{ (char)9577 }" +
+                          $"{ (char)9580 }" +
                           $"{ TextFormat.PrintHorizontalLine(15) }" +
                           $"{ (char)9571 }" +
                           $"");
@@ -114,7 +114,7 @@ public class TextPrinter
             // no action
             
             Console.WriteLine($"{ TextFormat.PaddingRight(5) }" +
-                              $"{ (char)9553, -2 }{ TextFormat.ExtractProductPrefix( product.Name ), -25 }" +
+                              $"{ (char)9553, -2 }{ TextFormat.ExtractProductPrefix( product.Name ), -27 }" +
                               $"{ (char)9553 }" + $"{ TextFormat.Color.CY }" + $"{ q0, 6 }" + $"{ TextFormat.Color.RS }" + $"{ (char)160 }" +
                               $"{ (char)9474 }{ q1, 6 }" + $"{ (char)160 }" +
                               $"{ (char)9474 }{ q2, 6 }" + $"{ (char)160 }" +
@@ -137,7 +137,7 @@ public class TextPrinter
         
         Console.WriteLine($"{ TextFormat.PaddingRight(5) }" + 
                           $"{ (char)9562 }" +
-                          $"{ TextFormat.PrintHorizontalLine(26) }" +
+                          $"{ TextFormat.PrintHorizontalLine(28) }" +
                           $"{ (char)9577 }" +
                           $"{ TextFormat.PrintHorizontalLine(7) }" +
                           $"{ (char)9575 }" +

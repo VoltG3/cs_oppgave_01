@@ -26,6 +26,19 @@
     }
   },
   {
+    "product_name": "fdd",
+    "product_price": "100",
+    "product_quantity": {
+      "default": "10000",
+      "store1": "10000",
+      "store2": "10000",
+      "store3": "9999",
+      "store4": "9999",
+      "store5": "9999",
+      "store6": "9999"
+    }
+  },
+  {
     "product_name" : "ram",
     "product_price" : "38,87",
     "product_quantity": {
@@ -49,6 +62,71 @@
       "store4": "96",
       "store5": "95",
       "store6": "94"
+    }
+  },
+  {
+    "product_name" : "atx_e",
+    "product_price" : "1000",
+    "product_quantity": {
+      "default": "1000",
+      "store1": "1000",
+      "store2": "1000",
+      "store3": "1000",
+      "store4": "1000",
+      "store5": "1000",
+      "store6": "1000"
+    }
+  },
+  {
+    "product_name" : "atx",
+    "product_price" : "1000",
+    "product_quantity": {
+      "default": "1000",
+      "store1": "900",
+      "store2": "800",
+      "store3": "600",
+      "store4": "500",
+      "store5": "400",
+      "store6": "300"
+    }
+  },
+  {
+    "product_name" : "atx_m",
+    "product_price" : "1000",
+    "product_quantity": {
+      "default": "1000",
+      "store1": "800",
+      "store2": "700",
+      "store3": "600",
+      "store4": "500",
+      "store5": "400",
+      "store6": "300"
+    }
+  },
+  {
+    "product_name" : "vga_m",
+    "product_price" : "2010",
+    "product_quantity": {
+      "default": "77",
+      "store1": "77",
+      "store2": "75",
+      "store3": "71",
+      "store4": "69",
+      "store5": "69",
+      "store6": "68"
+    }
+  },
+  {
+    "product_name" : "svga",
+    "product_price" : "4750.34",
+    "product_quantity": {
+      "default": "77",
+      "store1": "55",
+      "store2": "45",
+      "store3": "45",
+      "store4": "45",
+      "store5": "44",
+      "store6": "39"
     }
   }
 ]

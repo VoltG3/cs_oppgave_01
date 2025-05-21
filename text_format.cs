@@ -51,12 +51,24 @@ public class TextFormat
                 return "Hard Disk Driver";
             case "ssd":
                 return "Solid State Drive";
+            case "fdd":
+                return "Floppy Disk Drive";
             case "ram":
                 return "Random Access Memory";
             case "cpu":
                 return "Central Processing Unit";
             case "gpu":
                 return "Graphics Processing Unit";
+            case "atx_e":
+                return "Cabinet E-ATX";
+            case "atx":
+                return "Cabinet ATX";
+            case "atx_m":
+                return "Cabinet Micro-ATX";
+            case "vga_m":
+                return "CRT VGA Monochrome Display";
+            case "svga":
+                return "CRT SVGA Color Display";
             default:
                 return name;
         }
