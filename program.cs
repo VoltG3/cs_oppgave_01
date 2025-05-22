@@ -42,6 +42,8 @@ class Program
         TextPrinter.ProductBalance(allProducts);
         TextPrinter.PriceAligning(allProducts);
         
+        TextFormat.Space(1);
+        
        /*
         foreach (var product in allProducts)
         {

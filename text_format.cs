@@ -119,18 +119,32 @@ public class TextFormat
         return line;
     }
 
+    public static string ExtractProtectionRankFlag(int num)
+    {
+        switch (num)
+        {
+            case 1:
+                return Color.RD;
+            case 2:
+                return Color.CY;
+            case 3:
+                return Color.YL;
+            default:
+                return Color.RS;
+        }
+    }
     public static string ExtractProtextionRank(int num)
     {
         switch (num)
         {
             case 1:
-                return "HIGH";
+                return "HIG";
             case 2:
                 return "MID";
             case 3:
                 return "LOW";
             default:
-                return "----";
+                return "---";
         }
     }
     
