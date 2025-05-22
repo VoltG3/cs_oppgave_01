@@ -115,7 +115,7 @@ public class TextPrinter
             // too less left
             // nothing less
             // no action
-            
+            var a = 100000;
             Console.WriteLine($"{ TextFormat.PaddingRight(5) }" +
                               $"{ (char)9553, -2 }{ TextFormat.ExtractProductPrefix( product.Name ), -27 }" +
                               $"{ (char)9553 }" + $"{ TextFormat.Color.CY }" + $"{ q0, 6 }" + $"{ TextFormat.Color.RS }" + $"{ (char)160 }" +
@@ -125,7 +125,7 @@ public class TextPrinter
                               $"{ (char)9474 }{ TextFormat.QuantityBalance(q0,  q4) }" + $"{ q4, 6 }" + $"{ TextFormat.Color.RS }" + $"{ (char)160 }" +
                               $"{ (char)9474 }{ TextFormat.QuantityBalance(q0,  q5) }" + $"{ q5, 6 }" + $"{ TextFormat.Color.RS }" + $"{ (char)160 }" +
                               $"{ (char)9474 }{ TextFormat.QuantityBalance(q0,  q6) }" + $"{ q6, 6 }" + $"{ TextFormat.Color.RS }" + $"{ (char)160 }" + 
-                              $"{ (char)9553 }" +
+                              $"{ (char)9553 }" + $"{ product.Temp(a), 2}" +
                               /* content section price */
                               $"{ TextFormat.PaddingRight(3) }" + 
                               $"{ (char)9553 }{ TextFormat.FormatPrice(product.Price), 10 }" + $" NoK" + $"{ (char)160 }" +

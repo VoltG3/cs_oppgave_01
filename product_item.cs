@@ -14,4 +14,10 @@ public class ProductItem
         Quantities = quantities;
         Price = price;
     }
+
+    public bool Temp(int taget)
+    {
+        var a = Quantities[0] - taget;
+        return a > 0;
+    }
 }
