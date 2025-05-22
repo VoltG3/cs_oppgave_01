@@ -12,8 +12,14 @@ class Program
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
         Console.Clear();
+        
+        // C++ implementation
+        TextFormat.Space(1);
+        Console.Write($"{TextFormat.PaddingRight(5)}");
+        ShowMessage();
         TextFormat.Space(1);
         
+        // Onload *.JSON data
         string path="assets/products.json";
         var productsData = ReadFile.JsonData(path);
         
@@ -31,8 +37,10 @@ class Program
             productStore.AddProduct(name, quantities, price);
         }
         
+        // Print out Resutls
         List<ProductItem> allProducts = productStore.GetAllProductData();
-        TextPrinter.PrintTable(allProducts);
+        TextPrinter.ProductBalance(allProducts);
+        TextPrinter.PriceAligning(allProducts);
         
        /*
         foreach (var product in allProducts)
@@ -47,8 +55,8 @@ class Program
             Console.WriteLine();
         }
         */
-        TextFormat.Space(1);
-        ShowMessage();
+        
+        
         
         // List<string> Add, Remove, Find, Sort, Reverse, Count, IndexOf, Contains,
     }

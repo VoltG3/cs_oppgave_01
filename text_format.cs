@@ -4,12 +4,69 @@ namespace cs_oppgave_01;
 
 public class TextFormat
 {
-    public static string QuantityBalance(string store, string index)
+    public static string QuantityBalanceResult(string store, string index)
     {
-        if (int.Parse(store) == int.Parse(index))
+        int storeVal = int.Parse(store);
+        int indexVal = int.Parse(index);
+        int indexValHalvYear = int.Parse(index) ;
+        var precentDiff = (storeVal - indexValHalvYear) * 100 / storeVal;
+        
+        // product count :: if 10 or less than 10 left
+        if (indexVal <= 10)
+        {
+            return Color.YL;
+        }
+        
+        // product count :: if equal
+        if (storeVal == indexVal)
         {
             return Color.RD;
         }
+        
+        // product count :: if difference is 10% or less 
+        if (precentDiff <= 10)
+        {
+            return Color.RD;
+        }
+
+        // product count :: if stock is 10% or more lower
+        if (precentDiff >= 5)
+        {
+            return Color.CY;
+        }
+        
+        return Color.RS;
+    }
+    
+    public static string QuantityBalance(string store, string index)
+    {
+        int storeVal = int.Parse(store);
+        int indexVal = int.Parse(index);
+        var precentDiff = (storeVal - indexVal) * 100 / storeVal;
+        
+        // product count :: if 10 or less than 10 left
+        if (indexVal <= 10)
+        {
+            return Color.YL;
+        }
+        
+        // product count :: if equal
+        if (storeVal == indexVal)
+        {
+            return Color.RD;
+        }
+        
+        // product count :: if 'index' is less 5% taht 'store'
+        if (precentDiff >= 5)
+        {
+            return Color.CY;
+        }
+        
+        if (precentDiff <= 5)
+        {
+            return Color.PR;
+        }
+        
         return Color.RS;
     }
 
@@ -41,6 +98,16 @@ public class TextFormat
         }
         return line;
     }
+
+    public static string PrintSingleLine(int count)
+    {
+        var line = "";
+        for (int i = 0; i < count; i++)
+        {
+            line += $"{ (char)9472 }";
+        }
+        return line;
+    }
     
     public static string PrintHorizontalLine(int count)
     {
@@ -50,6 +117,21 @@ public class TextFormat
             line += $"{ (char)9552 }";
         }
         return line;
+    }
+
+    public static string ExtractProtextionRank(int num)
+    {
+        switch (num)
+        {
+            case 1:
+                return "HIGH";
+            case 2:
+                return "MID";
+            case 3:
+                return "LOW";
+            default:
+                return "----";
+        }
     }
     
     public static string ExtractProductPrefix(string name)

@@ -7,7 +7,7 @@ public class ProductStore
     public List<List<int>>? productQuantities { get; set; } = new List<List<int>>();
     public List<float>? productPrice { get; set; } = new List<float>();
     
-    // Methods
+    // Constructor
     public void AddProduct(string name, List<int> quantities, float price)
     {
         productName.Add(name);
@@ -15,9 +15,7 @@ public class ProductStore
         productPrice.Add(price);
     }
     
-    // Constructor
-    
-    // Functions
+    // Methods === Functions
     public List<ProductItem> GetAllProductData()
     {
         List<ProductItem> assemblyProducts = new List<ProductItem>();
