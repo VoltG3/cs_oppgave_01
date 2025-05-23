@@ -13,17 +13,26 @@ class Program
         Console.OutputEncoding = System.Text.Encoding.UTF8;
         Console.Clear();
         
-        // C++ implementation
+        // ####################
+        //  C++ implementation
+        // ####################
+        
         TextFormat.Space(1);
         Console.Write($"{TextFormat.PaddingRight(5)}");
+        
         ShowMessage();
+        
         TextFormat.Space(1);
         
-        // Onload *.JSON data
+        // ####################
+        //  Onload *.JSON data
+        // ####################
+        
         string path="assets/products.json";
-        var productsData = ReadFile.JsonData(path);
+        var productsData = FileReader.JsonData(path);
         
         ProductStore productStore = new ProductStore();
+        
         for (int i = 0; i < productsData.Count; i++)
         {
             List<int> quantities = productsData[i].ProductQuantity
@@ -32,31 +41,19 @@ class Program
                 .ToList();
             float price = float.Parse(productsData[i].ProductPrice);
             string name = productsData[i].ProductName;
+            
             productStore.AddProduct(name, quantities, price);
         }
         
-        // Print out Resutls
+        // ###################
+        //  Print out Results
+        // ###################
+        
         List<ProductItem> allProducts = productStore.GetAllProductData();
-        TextPrinter.ProductBalance(allProducts);
-        TextPrinter.PriceAligning(allProducts);
+        ProductBalanse.Print(allProducts);
+        PriceAligning.Print(allProducts);
+        AllFields.Print(allProducts);
         
         TextFormat.Space(1);
-        
-        /*
-        // Print out all products
-        foreach (var product in allProducts)
-        {
-            Console.WriteLine($"Product: {product.Name}");
-            Console.WriteLine($"Price: {product.Price}");
-            Console.WriteLine("Quantities:");
-            for (int i = 0; i < product.Quantities.Count; i++)
-            {
-                Console.WriteLine($"  {i + 1}: {product.Quantities[i]}");
-            }
-            Console.WriteLine();
-        }
-        */
-        
-        // List<string> Add, Remove, Find, Sort, Reverse, Count, IndexOf, Contains,
     }
 }

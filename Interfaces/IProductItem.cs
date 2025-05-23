@@ -17,32 +17,22 @@ public interface IProductItem
     float Price { get; set; }
     
     /// <summary>
-    /// Initial storage status: item quantity
-    /// </summary>
-    int InitialStockQuantity { get; }
-    
-    /// <summary>
-    /// Remaining storage status: item left in stock
-    /// </summary>
-    int RemainingStockQuantity { get; }
-    
-    /// <summary>
     ///  Defines possible price discount ranges
     /// </summary>
-    int PriceProtectionRange { get; }
+    int DiscountRange { get; }
     
     /// <summary>
     /// Price aligning: new price with discount
     /// </summary>
-    float DiscountPrice { get; }
+    float PriceWithDiscount { get; }
     
     /// <summary>
     /// Calculates the remaining stock quantity as a percentage of the initial stock
     /// </summary>
-    float RemainingStockQuantityPrecent { get; }
+    float RemainingStockPrecentage { get; }
     
     /// <summary>
     /// If the remaining stock quantity is less than 10, the product is considered low on stock
     /// </summary>
-    bool RemainingStockQuantityIsLow { get; }
+    bool IsRemainingStockLow { get; }
 }

@@ -3,7 +3,7 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-public class ReadFile
+public class FileReader
 {
     public class ProductRawData
     {

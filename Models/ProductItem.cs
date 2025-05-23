@@ -6,17 +6,15 @@ public class ProductItem : IProductItem
     public string Name { get; set; }
     public List<int> Quantities { get; set; }
     public float Price { get; set; }
-    public int InitialStockQuantity => Quantities![0];
-    public int RemainingStockQuantity => Quantities![5];
-    public int PriceProtectionRange => Price > 8000 ? 1 : Price > 4000 ? 2 : 3;
-    public float RemainingStockQuantityPrecent => (RemainingStockQuantity * 100f) / InitialStockQuantity;
-    public bool RemainingStockQuantityIsLow => RemainingStockQuantity <= 10;
-    public float DiscountPrice => 
+    public int DiscountRange => Price > 8000 ? 1 : Price > 4000 ? 2 : 3;
+    public float RemainingStockPrecentage => (Quantities[5] * 100f) / Quantities[0];
+    public bool IsRemainingStockLow => Quantities[5] <= 10;
+    public float PriceWithDiscount => 
         CalcDiscount(
             Price, 
-            PriceProtectionRange, 
-            RemainingStockQuantityPrecent,
-            RemainingStockQuantityIsLow
+            DiscountRange, 
+            RemainingStockPrecentage,
+            IsRemainingStockLow
         );
     
     // Constructor
@@ -29,12 +27,13 @@ public class ProductItem : IProductItem
     
     // Methods === Functions 
     public float CalcDiscount(
-        float price, int priceProtectionRange, 
-        float remainingStockQuantityPrecent,
-        bool remainingStockQuantityIsLow)
+        float price, 
+        int discountRange, 
+        float remainingStockPrecentage,
+        bool isRemainingStockLow)
     {
         
-        var discountRateLessLeft = priceProtectionRange switch
+        var discountRateLessLeft = discountRange switch
         {
             1 => 0.33f,
             2 => 0.66f,
@@ -42,7 +41,7 @@ public class ProductItem : IProductItem
             _ => 0.00f,
         };
 
-        var discountRateStack = priceProtectionRange switch
+        var discountRateStack = discountRange switch
         {
             1 => 0.10f,
             2 => 0.15f,
@@ -51,13 +50,13 @@ public class ProductItem : IProductItem
         };
         
         // product count :: if 10 or less than 10 left
-        if (remainingStockQuantityIsLow)
+        if (isRemainingStockLow)
         {
             return price - price * discountRateLessLeft;
         }
         
-        // if remainingStockQuantityPrecent is more than 50%
-        if (remainingStockQuantityPrecent > 50f)
+        // if the remainingStockPrecentage is more than 50%
+        if (remainingStockPrecentage > 50f)
         {
             return price - price * discountRateStack;
         }
