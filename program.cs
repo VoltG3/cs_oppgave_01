@@ -52,7 +52,7 @@ class Program
         List<ProductItem> allProducts = productStore.GetAllProductData();
         ProductBalanse.Print(allProducts);
         PriceAligning.Print(allProducts);
-        AllFields.Print(allProducts);
+        Debugging.Print(allProducts);   
         
         TextFormat.Space(1);
     }
