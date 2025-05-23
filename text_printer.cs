@@ -151,8 +151,8 @@ public class TextPrinter
         // ###############################
         
         TextFormat.Space(1);
-        Console.WriteLine($" { TextFormat.PaddingRight(4) }" + $"{ TextFormat.Color.CY } PRICE ALIGNING BY FLOW TENDENCY { TextFormat.Color.RS}");
-        Console.WriteLine($"{ TextFormat.PaddingRight(6) }" + $"{ TextFormat.Color.CY }" + $"{ TextFormat.PrintSingleLine(94)}" + $"{ TextFormat.Color.RS }");
+        Console.WriteLine($"{TextFormat.PaddingRight(4) }" + $"{ TextFormat.Color.CY } PRICE ALIGNING BY FLOW TENDENCY { TextFormat.Color.RS}");
+        Console.WriteLine($"{TextFormat.PaddingRight(6) }" + $"{ TextFormat.Color.CY }" + $"{ TextFormat.PrintSingleLine(94)}" + $"{ TextFormat.Color.RS }");
         Console.WriteLine($"{TextFormat.PaddingRight(10)}" + $"{ "price protection rank" }" + $"{ TextFormat.Color.RD }" + $"{ " HIG - " }" + $"{ TextFormat.Color.RS }" + $"{ "new price not less that 8000 NoK" }");
         Console.WriteLine($"{TextFormat.PaddingRight(10)}" + $"{ "price protection rank" }" + $"{ TextFormat.Color.CY }" + $"{ " MID - " }" + $"{ TextFormat.Color.RS }" + $"{ "new price not less that 4000 NoK" }");
         Console.WriteLine($"{TextFormat.PaddingRight(10)}" + $"{ "price protection rank" }" + $"{ TextFormat.Color.YL }" + $"{ " LOW - " }" + $"{ TextFormat.Color.RS }" + $"{ "none new price protection" }");

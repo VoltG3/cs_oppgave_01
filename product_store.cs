@@ -1,6 +1,6 @@
 namespace cs_oppgave_01;
 
-public class ProductStore
+public class ProductStore : IProductStore
 {
     // Fields
     public List<string>? productName { get; set; } = new List<string>();
