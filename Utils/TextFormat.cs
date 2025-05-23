@@ -24,7 +24,7 @@ public class TextFormat
         return line;
     }
 
-    public static string PrintSingleLine(int count)
+    public static string PrintHorizontalSingleLine(int count)
     {
         var line = "";
         for (int i = 0; i < count; i++)
@@ -34,7 +34,7 @@ public class TextFormat
         return line;
     }
     
-    public static string PrintHorizontalLine(int count)
+    public static string PrintHorizontalDoubleLine(int count)
     {
         var line = "";
         for (int i = 0; i < count; i++)

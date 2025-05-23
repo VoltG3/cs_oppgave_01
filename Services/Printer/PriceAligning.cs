@@ -8,46 +8,43 @@ public class PriceAligning
         //  table header 
         // ##############
         
+        string h00 = "PRICE ALIGNING BY FLOW TENDENCY";
+        string h01 = "price protection rank";
+        string h0a = " HIG - ";
+        string h0b = " MED - ";
+        string h0c = " LOW - ";
+        string h02 = "new price not less that 8000 NoK";
+        string h03 = "new price not less that 4000 NoK";
+        string h04 = "none new price protection";
+        
         TextFormat.Space(1);
-        Console.WriteLine($"{TextFormat.PaddingRight(4) }" + $"{ TextColors.Color.CY } PRICE ALIGNING BY FLOW TENDENCY { TextColors.Color.RS}");
-        Console.WriteLine($"{TextFormat.PaddingRight(6) }" + $"{ TextColors.Color.CY }" + $"{ TextFormat.PrintSingleLine(94)}" + $"{ TextColors.Color.RS }");
-        Console.WriteLine($"{TextFormat.PaddingRight(10)}" + $"{ "price protection rank" }" + $"{ TextColors.Color.RD }" + $"{ " HIG - " }" + $"{ TextColors.Color.RS }" + $"{ "new price not less that 8000 NoK" }");
-        Console.WriteLine($"{TextFormat.PaddingRight(10)}" + $"{ "price protection rank" }" + $"{ TextColors.Color.CY }" + $"{ " MID - " }" + $"{ TextColors.Color.RS }" + $"{ "new price not less that 4000 NoK" }");
-        Console.WriteLine($"{TextFormat.PaddingRight(10)}" + $"{ "price protection rank" }" + $"{ TextColors.Color.YL }" + $"{ " LOW - " }" + $"{ TextColors.Color.RS }" + $"{ "none new price protection" }");
+        Console.WriteLine($"{ TextFormat.PaddingRight(04)}{ TextColors.Color.CY }{ h00 }{ TextColors.Color.RS}");
+        Console.WriteLine($"{ TextFormat.PaddingRight(06)}{ TextColors.Color.CY }{ TextFormat.PrintHorizontalSingleLine(94)}{ TextColors.Color.RS }");
+        Console.WriteLine($"{ TextFormat.PaddingRight(10)}{ h01 }{ TextColors.Color.RD }{ h0a }{ TextColors.Color.RS }{ h02 }");
+        Console.WriteLine($"{ TextFormat.PaddingRight(10)}{ h01 }{ TextColors.Color.CY }{ h0b }{ TextColors.Color.RS }{ h03 }");
+        Console.WriteLine($"{ TextFormat.PaddingRight(10)}{ h01 }{ TextColors.Color.YL }{ h0c }{ TextColors.Color.RS }{ h04 }");
         
         Console.WriteLine($" { TextFormat.PaddingRight(5) }" + 
-                          $"{ (char)9556 }" +
-                          $"{ TextFormat.PrintHorizontalLine(28) }" +
-                          $"{ (char)9574 }" +
-                          $"{ TextFormat.PrintHorizontalLine(15) }" +
-                          $"{ (char)9574 }" +
-                          $"{ TextFormat.PrintHorizontalLine(31) }" +
-                          $"{ (char)9574 }" +
-                          $"{ TextFormat.PrintHorizontalLine(15) }" +
-                          $"{ (char)9559 }" +
-                          $"");
+                          $"{ (char)9556 }{ TextFormat.PrintHorizontalDoubleLine(28) }" +
+                          $"{ (char)9574 }{ TextFormat.PrintHorizontalDoubleLine(15) }" +
+                          $"{ (char)9574 }{ TextFormat.PrintHorizontalDoubleLine(31) }" +
+                          $"{ (char)9574 }{ TextFormat.PrintHorizontalDoubleLine(15) }" +
+                          $"{ (char)9559 }");
         
         Console.WriteLine($"{ TextFormat.PaddingRight(6) }" +
-                          $"{ (char)9553, -2 }" + $"{ "Product", -27 }" + 
-                          $"{ (char)9553, -2 }" + $"{ "Default Price", -14 }" +
-                          $"{ (char)9553, -2 }" + $"{ "Price Protection Rang Action", -30 }" +
-                          $"{ (char)9553, -2 }" + $"{ "Aligned Price", -14 }" +
-                          $"{ (char)9553 }" +
-                          $"");
+                          $"{ (char)9553, -2 }{ "Product", -27 }" + 
+                          $"{ (char)9553, -2 }{ "Default Price", -14 }" +
+                          $"{ (char)9553, -2 }{ "Price Protection Rang Action", -30 }" +
+                          $"{ (char)9553, -2 }{ "Aligned Price", -14 }" +
+                          $"{ (char)9553 }");
         
         Console.WriteLine($"{ TextFormat.PaddingRight(6) }" + 
-                          $"{ (char)9567 }" +
-                          $"{ TextFormat.PrintHorizontalLine(28) }" +
-                          $"{ (char)9580 }" +
-                          $"{ TextFormat.PrintHorizontalLine(15) }" +
-                          $"{ (char)9580 }" +
-                          $"{ TextFormat.PrintHorizontalLine(5) }" +
-                          $"{ (char)9572}" +
-                          $"{ TextFormat.PrintHorizontalLine(25) }" +
-                          $"{ (char)9580 }" +
-                          $"{ TextFormat.PrintHorizontalLine(15) }" +
-                          $"{ (char)9571 }" +
-                          $"");
+                          $"{ (char)9567 }{ TextFormat.PrintHorizontalDoubleLine(28) }" +
+                          $"{ (char)9580 }{ TextFormat.PrintHorizontalDoubleLine(15) }" +
+                          $"{ (char)9580 }{ TextFormat.PrintHorizontalDoubleLine(05) }" +
+                          $"{ (char)9572 }{ TextFormat.PrintHorizontalDoubleLine(25) }" +
+                          $"{ (char)9580 }{ TextFormat.PrintHorizontalDoubleLine(15) }" +
+                          $"{ (char)9571 }");
         
         // ###############
         //  table content 
@@ -75,17 +72,11 @@ public class PriceAligning
             // ##############
         
             Console.WriteLine($"{ TextFormat.PaddingRight(6) }" + 
-                              $"{ (char)9562 }" +
-                              $"{ TextFormat.PrintHorizontalLine(28) }" +
-                              $"{ (char)9577 }" +
-                              $"{ TextFormat.PrintHorizontalLine(15) }" +
-                              $"{ (char)9577 }" +
-                              $"{ TextFormat.PrintHorizontalLine(5) }" +
-                              $"{ (char)9575 }" +
-                              $"{ TextFormat.PrintHorizontalLine(25) }" +
-                              $"{ (char)9577 }" +
-                              $"{ TextFormat.PrintHorizontalLine(15) }" +
-                              $"{ (char)9565 }" +
-                              $"");
+                              $"{ (char)9562 }{ TextFormat.PrintHorizontalDoubleLine(28) }" +
+                              $"{ (char)9577 }{ TextFormat.PrintHorizontalDoubleLine(15) }" +
+                              $"{ (char)9577 }{ TextFormat.PrintHorizontalDoubleLine(5) }" +
+                              $"{ (char)9575 }{ TextFormat.PrintHorizontalDoubleLine(25) }" +
+                              $"{ (char)9577 }{ TextFormat.PrintHorizontalDoubleLine(15) }" +
+                              $"{ (char)9565 }");
     }
 }

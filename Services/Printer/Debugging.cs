@@ -17,7 +17,7 @@ public class Debugging
         
         Console.WriteLine(
             $"{ TextFormat.PaddingRight(6) }" + 
-            $"{ TextFormat.PrintSingleLine(58) }" +
+            $"{ TextFormat.PrintHorizontalSingleLine(58) }" +
             $"");
         
         foreach (var product in products)
