@@ -1,7 +1,20 @@
 [
   {
-    "product_name" : "hdd",
-    "product_price" : "98.78",
+    "product_name" : "hdd_ide",
+    "product_price" : "100",
+    "product_quantity": {
+      "default": "1000",
+      "store1": "599",
+      "store2": "599",
+      "store3": "194",
+      "store4": "120",
+      "store5": "7",
+      "store6": "7"
+    }
+  },
+  {
+    "product_name" : "hdd_sata",
+    "product_price" : "5000",
     "product_quantity": {
       "default": "1000",
       "store1": "599",
@@ -14,15 +27,54 @@
   },
   {
     "product_name" : "ssd",
-    "product_price" : "7000.01",
+    "product_price" : "9000",
     "product_quantity": {
-      "default": "5000",
-      "store1": "5000",
-      "store2": "5000",
-      "store3": "4987",
-      "store4": "4965",
-      "store5": "4601",
-      "store6": "4698"
+      "default": "1000",
+      "store1": "599",
+      "store2": "599",
+      "store3": "194",
+      "store4": "120",
+      "store5": "7",
+      "store6": "7"
+    }
+  },
+  {
+    "product_name" : "gpu_c",
+    "product_price" : "287.53",
+    "product_quantity": {
+      "default": "100",
+      "store1": "99",
+      "store2": "98",
+      "store3": "97",
+      "store4": "96",
+      "store5": "95",
+      "store6": "94"
+    }
+  },
+  {
+    "product_name" : "gpu_b",
+    "product_price" : "7287.53",
+    "product_quantity": {
+      "default": "100",
+      "store1": "99",
+      "store2": "98",
+      "store3": "97",
+      "store4": "96",
+      "store5": "95",
+      "store6": "94"
+    }
+  },
+  {
+    "product_name" : "gpu_a",
+    "product_price" : "17287.53",
+    "product_quantity": {
+      "default": "100",
+      "store1": "99",
+      "store2": "98",
+      "store3": "97",
+      "store4": "96",
+      "store5": "95",
+      "store6": "94"
     }
   },
   {
@@ -49,19 +101,6 @@
       "store4": "2000",
       "store5": "1500",
       "store6": "1499"
-    }
-  },
-  {
-    "product_name" : "gpu",
-    "product_price" : "17287.53",
-    "product_quantity": {
-      "default": "100",
-      "store1": "99",
-      "store2": "98",
-      "store3": "97",
-      "store4": "96",
-      "store5": "95",
-      "store6": "94"
     }
   },
   {

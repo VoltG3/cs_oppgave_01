@@ -29,7 +29,7 @@ public class TextFormat
             return Color.RD;
         }
 
-        // product count :: if stock is 10% or more lower
+        // product count :: if stock is 5% or more lower
         if (precentDiff >= 5)
         {
             return Color.CY;
@@ -152,18 +152,24 @@ public class TextFormat
     {
         switch (name)
         {
-            case "hdd":
-                return "Hard Disk Driver";
+            case "hdd_ide":
+                return "Hard Disk Driver IDE 40mb";
+            case "hdd_sata":
+                return "Hard Disk Driver SATA 40Gb";
             case "ssd":
-                return "Solid State Drive";
+                return "Solid State Drive SSD 4Tb";
             case "fdd":
-                return "Floppy Disk Drive";
+                return "Floppy Disk Drive 3,5\"";
             case "ram":
                 return "Random Access Memory";
             case "cpu":
                 return "Central Processing Unit";
-            case "gpu":
-                return "Graphics Processing Unit";
+            case "gpu_a":
+                return "Graphics Processing Unit A";
+            case "gpu_b":
+                return "Graphics Processing Unit B";
+            case "gpu_c":
+                return "Graphics Processing Unit C";
             case "atx_e":
                 return "Cabinet E-ATX";
             case "atx":

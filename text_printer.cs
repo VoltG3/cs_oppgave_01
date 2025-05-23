@@ -154,8 +154,8 @@ public class TextPrinter
         Console.WriteLine($" { TextFormat.PaddingRight(4) }" + $"{ TextFormat.Color.CY } PRICE ALIGNING BY FLOW TENDENCY { TextFormat.Color.RS}");
         Console.WriteLine($"{ TextFormat.PaddingRight(6) }" + $"{ TextFormat.Color.CY }" + $"{ TextFormat.PrintSingleLine(94)}" + $"{ TextFormat.Color.RS }");
         Console.WriteLine($"{TextFormat.PaddingRight(10)}" + $"{ "price protection rank" }" + $"{ TextFormat.Color.RD }" + $"{ " HIG - " }" + $"{ TextFormat.Color.RS }" + $"{ "new price not less that 8000 NoK" }");
-        Console.WriteLine($"{TextFormat.PaddingRight(10)}" + $"{ "price protection rank" }" + $"{ TextFormat.Color.CY }" + $"{ " MID  - " }" + $"{ TextFormat.Color.RS }" + $"{ "new price not less that 4000 NoK" }");
-        Console.WriteLine($"{TextFormat.PaddingRight(10)}" + $"{ "price protection rank" }" + $"{ TextFormat.Color.YL }" + $"{ " LOW  - " }" + $"{ TextFormat.Color.RS }" + $"{ "none new price protection" }");
+        Console.WriteLine($"{TextFormat.PaddingRight(10)}" + $"{ "price protection rank" }" + $"{ TextFormat.Color.CY }" + $"{ " MID - " }" + $"{ TextFormat.Color.RS }" + $"{ "new price not less that 4000 NoK" }");
+        Console.WriteLine($"{TextFormat.PaddingRight(10)}" + $"{ "price protection rank" }" + $"{ TextFormat.Color.YL }" + $"{ " LOW - " }" + $"{ TextFormat.Color.RS }" + $"{ "none new price protection" }");
         
         Console.WriteLine($" { TextFormat.PaddingRight(5) }" + 
                           $"{ (char)9556 }" +
@@ -208,7 +208,7 @@ public class TextPrinter
                               $"{ (char)9553 }{ TextFormat.FormatPrice(product.Price), 10 }" + $" NoK" + $"{ (char)160 }" +
                               $"{ (char)9553, -2 }{ TextFormat.ExtractProtectionRankFlag(product.PriceProtectionRange)}{ TextFormat.ExtractProtextionRank(product.PriceProtectionRange), -3 }{ TextFormat.Color.RS }" + $"{ (char)160 }" +
                               $"{ (char)9474, -2 }" + $"{ "formula line", -24 }" +
-                              $"{ (char)9553 }{ TextFormat.FormatPrice(product.Price), 10 }" + $" NoK" + $"{ (char)160 }" +
+                              $"{ (char)9553 }{ TextFormat.FormatPrice(product.DiscountPrice), 10 }" + $" NoK" + $"{ (char)160 }" +
                               $"{ (char)9553 }" +
                               $"");
         
