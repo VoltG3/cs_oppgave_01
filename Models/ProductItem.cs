@@ -7,8 +7,8 @@ public class ProductItem : IProductItem
     public List<int> Quantities { get; set; }
     public float Price { get; set; }
     public int DiscountRange => Price > 8000 ? 1 : Price > 4000 ? 2 : 3;
-    public float RemainingStockPrecentage => (Quantities[5] * 100f) / Quantities[0];
-    public bool IsRemainingStockLow => Quantities[5] <= 10;
+    public float RemainingStockPrecentage => (Quantities[6] * 100f) / Quantities[0];
+    public bool IsRemainingStockLow => Quantities[6] <= 10;
     public float PriceWithDiscount => 
         CalcDiscount(
             Price, 
@@ -17,12 +17,24 @@ public class ProductItem : IProductItem
             IsRemainingStockLow
         );
     
+    
     // Constructor
     public ProductItem(string name, List<int> quantities, float price)
     {
         Name = name;
         Quantities = quantities;
         Price = price;
+    }
+
+    public List<float> GetAllRemainingStockPrecentage()
+    {
+        var precentage = new List<float>();
+        
+        for (int i = 0; i < Quantities.Count; i++)
+        {
+            precentage.Add(Quantities[i] * 100f / Quantities[0]);
+        }
+        return precentage;
     }
     
     // Methods === Functions 

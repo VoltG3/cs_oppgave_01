@@ -59,9 +59,9 @@ public class PriceAligning
             // no action
             
             Console.WriteLine($"{ TextFormat.PaddingRight(6) }" +
-                              $"{ (char)9553, -2 }{ TextFormat.ExtractProductPrefix( product.Name ), -27 }" +
+                              $"{ (char)9553, -2 }{ TextFormat.ReplaceTextProductPrefix( product.Name ), -27 }" +
                               $"{ (char)9553 }{ TextFormat.FormatPrice(product.Price), 10 }" + $" NoK" + $"{ (char)160 }" +
-                              $"{ (char)9553, -2 }{ TextColors.ExtractProtectionRankFlag(product.DiscountRange)}{ TextFormat.ExtractProtextionRank(product.DiscountRange), -3 }{ TextColors.Color.RS }" + $"{ (char)160 }" +
+                              $"{ (char)9553, -2 }{ TextColors.ExtractProtectionRankFlag(product.DiscountRange)}{ TextFormat.ReplaceTextPriceProtectionRank(product.DiscountRange), -3 }{ TextColors.Color.RS }" + $"{ (char)160 }" +
                               $"{ (char)9474, -2 }" + $"{ "formula line", -24 }" +
                               $"{ (char)9553 }{ TextFormat.FormatPrice(product.PriceWithDiscount), 10 }" + $" NoK" + $"{ (char)160 }" +
                               $"{ (char)9553 }" +

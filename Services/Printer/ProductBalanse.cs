@@ -85,7 +85,7 @@ public class ProductBalanse
             string q06 = product.Quantities[6].ToString();
             
             Console.WriteLine($"{ TextFormat.PaddingRight(6) }" +
-                              $"{ (char)9553, -2 }{ TextFormat.ExtractProductPrefix( product.Name ), -27 }" +
+                              $"{ (char)9553, -2 }{ TextFormat.ReplaceTextProductPrefix( product.Name ), -27 }" +
                               $"{ (char)9553 }{ TextColors.Color.CY }{ q00, 6 }{ TextColors.Color.RS }{ (char)160 }" +
                               $"{ (char)9474 }{ TextColors.QuantityBalance(q00,  q01) }{ q01, 6 }{ TextColors.Color.RS }{ (char)160 }" + 
                               $"{ (char)9474 }{ TextColors.QuantityBalance(q01,  q02) }{ q02, 6 }{ TextColors.Color.RS }{ (char)160 }" +

@@ -8,11 +8,43 @@ public class Debugging
         Console.WriteLine(
             $"{ TextFormat.PaddingRight(6) }" + 
             $"{ "P.Name", -11 }" + 
-            $"{ "R", -4 }" + 
-            $"{ "Price", -11 }"+ 
-            $"{ "Price D.", -12 }" + 
-            $"{ "IsLow", -8 }" +
+            $"{ "R", -5 }" + 
+            $"{ "Price-------", -11 }"+ 
+            $"{ "Price W/Disc.", 17 }" + 
+            $"{ "IsLow", -10 }" +
             $"{ "Left Stock %", -4 }" +
+            $"");
+        
+        Console.WriteLine(
+            $"{ TextFormat.PaddingRight(6) }" + 
+            $"{ TextFormat.PrintHorizontalSingleLine(58) }" +
+            $"");
+        
+        string f01 = ((char)160) + "NoK" + ((char)160);
+        
+        foreach (var product in products)
+        {
+            Console.WriteLine(
+                $"{ TextFormat.PaddingRight(6) }" + 
+                $"{ product.Name, -11 }" +
+                $"{ product.DiscountRange, -4 }" +
+                $"{ TextFormat.FormatPrice(product.Price), 9 }{ f01 }" +
+                $"{ TextFormat.FormatPrice(product.PriceWithDiscount), 11}{ f01 }" +
+                $"{ product.IsRemainingStockLow, -8 }" +
+                $"{ product.RemainingStockPrecentage, -4 }" +
+                $"");
+        }
+        
+        TextFormat.Space(1);
+        Console.WriteLine(
+            $"{ TextFormat.PaddingRight(6) }" + 
+            $"{ "Default", -10 }" + 
+            $"{ "Januar", -10 }" + 
+            $"{ "Februar", -10 }"+ 
+            $"{ "Mars", -10 }" + 
+            $"{ "April", -10 }" +
+            $"{ "Mai", -10 }" +
+            $"{ "Left Stock %", -10 }" +
             $"");
         
         Console.WriteLine(
@@ -23,14 +55,16 @@ public class Debugging
         foreach (var product in products)
         {
             Console.WriteLine(
-                $"{ TextFormat.PaddingRight(6) }" + 
-                $"{ product.Name, -11 }" +
-                $"{ product.DiscountRange, -4 }" +
-                $"{ product.Price, -11 }" +
-                $"{ product.PriceWithDiscount, -12 }" +
-                $"{ product.IsRemainingStockLow, -8 }" +
-                $"{ product.RemainingStockPrecentage, -4 }" +
+                $"{ TextFormat.PaddingRight(1) }" + 
+                $"{ product.GetAllRemainingStockPrecentage()[0], 10:F2}" +
+                $"{ product.GetAllRemainingStockPrecentage()[1], 10:F2}" +
+                $"{ product.GetAllRemainingStockPrecentage()[2], 10:F2}" +
+                $"{ product.GetAllRemainingStockPrecentage()[3], 10:F2}" +
+                $"{ product.GetAllRemainingStockPrecentage()[4], 10:F2}" +
+                $"{ product.GetAllRemainingStockPrecentage()[5], 10:F2}" +
+                $"{ product.GetAllRemainingStockPrecentage()[6], 10:F2}" +
+                // 
                 $"");
-        } 
+        }
     }
 }

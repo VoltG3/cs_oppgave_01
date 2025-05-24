@@ -12,8 +12,7 @@ public class TextFormat
         string formatted = price.ToString("#,0.00", culture);
         return formatted;
     }
-
-   
+    
     public static string PaddingRight(int count)
     {
         var line = "";
@@ -43,9 +42,8 @@ public class TextFormat
         }
         return line;
     }
-
     
-    public static string ExtractProtextionRank(int num)
+    public static string ReplaceTextPriceProtectionRank(int num)
     {
         switch (num)
         {
@@ -60,7 +58,7 @@ public class TextFormat
         }
     }
     
-    public static string ExtractProductPrefix(string name)
+    public static string ReplaceTextProductPrefix(string name)
     {
         switch (name)
         {
