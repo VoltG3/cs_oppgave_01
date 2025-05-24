@@ -9,7 +9,7 @@ public interface IProductItem
     /// <summary>
     /// List of product-left item count: each month
     /// </summary>
-    List<int> Quantities { get; set; }
+    List<int> FlowStock { get; set; }
     
     /// <summary>
     /// Product Price
@@ -24,15 +24,15 @@ public interface IProductItem
     /// <summary>
     /// Price aligning: new price with discount
     /// </summary>
-    float PriceWithDiscount { get; }
+    float DiscountPrice { get; }
     
     /// <summary>
     /// Calculates the remaining stock quantity as a percentage of the initial stock
     /// </summary>
-    float RemainingStockPrecentage { get; }
+    float FinalStockPct { get; }
     
     /// <summary>
     /// If the remaining stock quantity is less than 10, the product is considered low on stock
     /// </summary>
-    bool IsRemainingStockLow { get; }
+    bool IsLowStock { get; }
 }

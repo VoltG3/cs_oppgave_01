@@ -52,18 +52,19 @@ public class PriceAligning
 
         foreach (var product in products)
         {
-            // stack
-            // too much left
-            // too less left
-            // nothing less
-            // no action
+            
+            // flow_quick
+            // flow_normal
+            // flow_slowly
+            // flow_stack
+            // flow_empty
             
             Console.WriteLine($"{ TextFormat.PaddingRight(6) }" +
                               $"{ (char)9553, -2 }{ TextFormat.ReplaceTextProductPrefix( product.Name ), -27 }" +
                               $"{ (char)9553 }{ TextFormat.FormatPrice(product.Price), 10 }" + $" NoK" + $"{ (char)160 }" +
                               $"{ (char)9553, -2 }{ TextColors.ExtractProtectionRankFlag(product.DiscountRange)}{ TextFormat.ReplaceTextPriceProtectionRank(product.DiscountRange), -3 }{ TextColors.Color.RS }" + $"{ (char)160 }" +
                               $"{ (char)9474, -2 }" + $"{ "formula line", -24 }" +
-                              $"{ (char)9553 }{ TextFormat.FormatPrice(product.PriceWithDiscount), 10 }" + $" NoK" + $"{ (char)160 }" +
+                              $"{ (char)9553 }{ TextFormat.FormatPrice(product.DiscountPrice), 10 }" + $" NoK" + $"{ (char)160 }" +
                               $"{ (char)9553 }" +
                               $"");
         }

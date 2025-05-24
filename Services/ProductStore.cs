@@ -4,15 +4,15 @@ public class ProductStore : IProductStore
 {
     // Fields
     public List<string>? productName { get; set; } = new List<string>();
-    public List<List<int>>? productQuantities { get; set; } = new List<List<int>>();
     public List<float>? productPrice { get; set; } = new List<float>();
+    public List<List<int>>? productQuantities { get; set; } = new List<List<int>>();
     
     // Constructor
     public void AddProduct(string name, List<int> quantities, float price)
     {
         productName.Add(name);
-        productQuantities.Add(quantities);
         productPrice.Add(price);
+        productQuantities.Add(quantities);
     }
     
     // Methods === Functions

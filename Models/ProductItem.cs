@@ -4,48 +4,90 @@ public class ProductItem : IProductItem
 {
     // Fields
     public string Name { get; set; }
-    public List<int> Quantities { get; set; }
     public float Price { get; set; }
+    public List<int> FlowStock { get; set; }
+    public List<float> MonthlyFlowStockPct => CalcMonthlyFlow();
+    public List<string> MonthlyFlowStockFlag => CalcMonthlyFlowFlag();
+    public float FinalStockPct => (FlowStock[6] * 100f) / FlowStock[0];
+    public bool IsLowStock => FlowStock[6] <= 10;
     public int DiscountRange => Price > 8000 ? 1 : Price > 4000 ? 2 : 3;
-    public float RemainingStockPrecentage => (Quantities[6] * 100f) / Quantities[0];
-    public bool IsRemainingStockLow => Quantities[6] <= 10;
-    public float PriceWithDiscount => 
+    public float DiscountPrice => 
         CalcDiscount(
             Price, 
             DiscountRange, 
-            RemainingStockPrecentage,
-            IsRemainingStockLow
+            FinalStockPct,
+            IsLowStock
         );
     
-    
     // Constructor
-    public ProductItem(string name, List<int> quantities, float price)
+    public ProductItem(string name, List<int> flowStock, float price)
     {
         Name = name;
-        Quantities = quantities;
+        FlowStock = flowStock;
         Price = price;
     }
 
-    public List<float> GetAllRemainingStockPrecentage()
+    // Methods === Functions 
+    
+    public List<float> CalcMonthlyFlow()
     {
-        var precentage = new List<float>();
+        var pct = new List<float>();
         
-        for (int i = 0; i < Quantities.Count; i++)
+        for (int i = 0; i < FlowStock.Count; i++)
         {
-            precentage.Add(Quantities[i] * 100f / Quantities[0]);
+            pct.Add(FlowStock[i] * 100f / FlowStock[0]);
         }
-        return precentage;
+        return pct;
+    }
+
+    public List<string> CalcMonthlyFlowFlag()
+    {
+        var flag = new List<string>();
+        flag.Add("H");
+    
+        for (int i = 1; i < FlowStock.Count; i++)
+        {
+            if (FlowStock[i] == 0)
+            {
+                flag.Add("flow_empty");
+            }
+            else if (FlowStock[i] <= 10)
+            {
+                flag.Add("flow_quick");
+            }
+            else if (FlowStock[i] == FlowStock[i - 1])
+            {
+                flag.Add("flow_stack");
+            }
+            else if (FlowStock[i] < FlowStock[i - 1] * 0.9f)
+            {
+                flag.Add("flow_normal");
+            }
+            else if (FlowStock[i] > FlowStock[i - 1] * 0.9f)
+            {
+                flag.Add("flow_slow");
+            }
+            else if (FlowStock[i] == 0)
+            {
+                flag.Add("flow_empty");
+            }
+            else
+            {
+                flag.Add("UNKNOWN");
+            }
+            
+        }
+        return flag;
     }
     
-    // Methods === Functions 
     public float CalcDiscount(
         float price, 
         int discountRange, 
-        float remainingStockPrecentage,
-        bool isRemainingStockLow)
+        float finalStockPct,
+        bool isLowStock)
     {
         
-        var discountRateLessLeft = discountRange switch
+        var discountRateLowStock = discountRange switch
         {
             1 => 0.33f,
             2 => 0.66f,
@@ -53,7 +95,7 @@ public class ProductItem : IProductItem
             _ => 0.00f,
         };
 
-        var discountRateStack = discountRange switch
+        var discountRateStackStock = discountRange switch
         {
             1 => 0.10f,
             2 => 0.15f,
@@ -62,17 +104,14 @@ public class ProductItem : IProductItem
         };
         
         // product count :: if 10 or less than 10 left
-        if (isRemainingStockLow)
-        {
-            return price - price * discountRateLessLeft;
-        }
+        if (isLowStock)
+            return price - price * discountRateLowStock;
         
-        // if the remainingStockPrecentage is more than 50%
-        if (remainingStockPrecentage > 50f)
-        {
-            return price - price * discountRateStack;
-        }
-       
+        
+        // if the finalStockPct is more than 50%
+        if (finalStockPct > 50f)
+            return price - price * discountRateStackStock;
+        
         return price;
     }
 }

@@ -29,9 +29,9 @@ public class Debugging
                 $"{ product.Name, -11 }" +
                 $"{ product.DiscountRange, -4 }" +
                 $"{ TextFormat.FormatPrice(product.Price), 9 }{ f01 }" +
-                $"{ TextFormat.FormatPrice(product.PriceWithDiscount), 11}{ f01 }" +
-                $"{ product.IsRemainingStockLow, -8 }" +
-                $"{ product.RemainingStockPrecentage, -4 }" +
+                $"{ TextFormat.FormatPrice(product.DiscountPrice), 11}{ f01 }" +
+                $"{ product.IsLowStock, -8 }" +
+                $"{ product.FinalStockPct, -4 }" +
                 $"");
         }
         
@@ -56,14 +56,27 @@ public class Debugging
         {
             Console.WriteLine(
                 $"{ TextFormat.PaddingRight(1) }" + 
-                $"{ product.GetAllRemainingStockPrecentage()[0], 10:F2}" +
-                $"{ product.GetAllRemainingStockPrecentage()[1], 10:F2}" +
-                $"{ product.GetAllRemainingStockPrecentage()[2], 10:F2}" +
-                $"{ product.GetAllRemainingStockPrecentage()[3], 10:F2}" +
-                $"{ product.GetAllRemainingStockPrecentage()[4], 10:F2}" +
-                $"{ product.GetAllRemainingStockPrecentage()[5], 10:F2}" +
-                $"{ product.GetAllRemainingStockPrecentage()[6], 10:F2}" +
-                // 
+                $"{ product.CalcMonthlyFlow()[0], 10:F2}" +
+                $"{ product.CalcMonthlyFlow()[1], 10:F2}" +
+                $"{ product.CalcMonthlyFlow()[2], 10:F2}" +
+                $"{ product.CalcMonthlyFlow()[3], 10:F2}" +
+                $"{ product.CalcMonthlyFlow()[4], 10:F2}" +
+                $"{ product.CalcMonthlyFlow()[5], 10:F2}" +
+                $"{ product.CalcMonthlyFlow()[6], 10:F2}" +
+                $"");
+        }
+
+        foreach (var product in products)
+        {
+            Console.WriteLine(
+                $"{ TextFormat.PaddingRight(1) }" + 
+                $"{ product.CalcMonthlyFlowFlag()[0], -13}" +
+                $"{ product.CalcMonthlyFlowFlag()[1], -13}" +
+                $"{ product.CalcMonthlyFlowFlag()[2], -13}" +
+                $"{ product.CalcMonthlyFlowFlag()[3], -13}" +
+                $"{ product.CalcMonthlyFlowFlag()[4], -13}" +
+                $"{ product.CalcMonthlyFlowFlag()[5], -13}" +
+                $"{ product.CalcMonthlyFlowFlag()[6], -13}" +
                 $"");
         }
     }

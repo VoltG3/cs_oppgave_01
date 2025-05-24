@@ -76,24 +76,39 @@ public class ProductBalanse
         
         foreach (var product in products)
         {
-            string q00 = product.Quantities[0].ToString();
-            string q01 = product.Quantities[1].ToString();
-            string q02 = product.Quantities[2].ToString();
-            string q03 = product.Quantities[3].ToString();
-            string q04 = product.Quantities[4].ToString();
-            string q05 = product.Quantities[5].ToString();
-            string q06 = product.Quantities[6].ToString();
+            string q00 = product.FlowStock[0].ToString();
+            string q01 = product.FlowStock[1].ToString();
+            string q02 = product.FlowStock[2].ToString();
+            string q03 = product.FlowStock[3].ToString();
+            string q04 = product.FlowStock[4].ToString();
+            string q05 = product.FlowStock[5].ToString();
+            string q06 = product.FlowStock[6].ToString();
+            string f01 = product.MonthlyFlowStockFlag[1];
+            string f02 = product.MonthlyFlowStockFlag[2];
+            string f03 = product.MonthlyFlowStockFlag[3];
+            string f04 = product.MonthlyFlowStockFlag[4];
+            string f05 = product.MonthlyFlowStockFlag[5];
+            string f06 = product.MonthlyFlowStockFlag[6];
             
             Console.WriteLine($"{ TextFormat.PaddingRight(6) }" +
                               $"{ (char)9553, -2 }{ TextFormat.ReplaceTextProductPrefix( product.Name ), -27 }" +
                               $"{ (char)9553 }{ TextColors.Color.CY }{ q00, 6 }{ TextColors.Color.RS }{ (char)160 }" +
-                              $"{ (char)9474 }{ TextColors.QuantityBalance(q00,  q01) }{ q01, 6 }{ TextColors.Color.RS }{ (char)160 }" + 
-                              $"{ (char)9474 }{ TextColors.QuantityBalance(q01,  q02) }{ q02, 6 }{ TextColors.Color.RS }{ (char)160 }" +
-                              $"{ (char)9474 }{ TextColors.QuantityBalance(q02,  q03) }{ q03, 6 }{ TextColors.Color.RS }{ (char)160 }" +
-                              $"{ (char)9474 }{ TextColors.QuantityBalance(q03,  q04) }{ q04, 6 }{ TextColors.Color.RS }{ (char)160 }" +
-                              $"{ (char)9474 }{ TextColors.QuantityBalance(q04,  q05) }{ q05, 6 }{ TextColors.Color.RS }{ (char)160 }" +
-                              $"{ (char)9474 }{ TextColors.QuantityBalance(q05,  q06) }{ q06, 6 }{ TextColors.Color.RS }{ (char)160 }" +
+                              /*
+                              $"{ (char)9474 }{ TextColors.QuantityBalance(p00,  p01) }{ q01, 6 }{ TextColors.Color.RS }{ (char)160 }" + 
+                              $"{ (char)9474 }{ TextColors.QuantityBalance(p01,  p02) }{ q02, 6 }{ TextColors.Color.RS }{ (char)160 }" +
+                              $"{ (char)9474 }{ TextColors.QuantityBalance(p02,  p03) }{ q03, 6 }{ TextColors.Color.RS }{ (char)160 }" +
+                              $"{ (char)9474 }{ TextColors.QuantityBalance(p03,  p04) }{ q04, 6 }{ TextColors.Color.RS }{ (char)160 }" +
+                              $"{ (char)9474 }{ TextColors.QuantityBalance(p04,  p05) }{ q05, 6 }{ TextColors.Color.RS }{ (char)160 }" +
+                              $"{ (char)9474 }{ TextColors.QuantityBalance(p04,  p05) }{ q06, 6 }{ TextColors.Color.RS }{ (char)160 }" +
                               $"{ (char)9553 }{ TextColors.QuantityBalanceResult(q00,  q06) }{ q06, 6 }{ TextColors.Color.RS }{ (char)160 }" +
+                              */
+                              
+                              $"{ (char)9474 }{ TextColors.MonthlyFlag( f01 )}{ q01, 6 }{ TextColors.Color.RS }{ (char)160 }" + 
+                              $"{ (char)9474 }{ TextColors.MonthlyFlag( f02 )}{ q02, 6 }{ TextColors.Color.RS }{ (char)160 }" +
+                              $"{ (char)9474 }{ TextColors.MonthlyFlag( f03 )}{ q03, 6 }{ TextColors.Color.RS }{ (char)160 }" +
+                              $"{ (char)9474 }{ TextColors.MonthlyFlag( f04 )}{ q04, 6 }{ TextColors.Color.RS }{ (char)160 }" +
+                              $"{ (char)9474 }{ TextColors.MonthlyFlag( f05 )}{ q05, 6 }{ TextColors.Color.RS }{ (char)160 }" +
+                              $"{ (char)9474 }{ TextColors.MonthlyFlag( f06 )}{ q06, 6 }{ TextColors.Color.RS }{ (char)160 }" +
                               $"{ (char)9553 }");
         }
         
