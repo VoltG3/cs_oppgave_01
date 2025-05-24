@@ -34,7 +34,7 @@ public class PriceAligning
         Console.WriteLine($"{ TextFormat.PaddingRight(6) }" +
                           $"{ (char)9553, -2 }{ "Product", -27 }" + 
                           $"{ (char)9553, -2 }{ "Default Price", -14 }" +
-                          $"{ (char)9553, -2 }{ "Price Protection Rang Action", -30 }" +
+                          $"{ (char)9553, -2 }{ "Price Protection Rang/Action", -30 }" +
                           $"{ (char)9553, -2 }{ "Aligned Price", -14 }" +
                           $"{ (char)9553 }");
         
@@ -52,19 +52,13 @@ public class PriceAligning
 
         foreach (var product in products)
         {
-            
-            // flow_quick
-            // flow_normal
-            // flow_slowly
-            // flow_stack
-            // flow_empty
-            
+            string val = $"{ (char)160 }NoK";
             Console.WriteLine($"{ TextFormat.PaddingRight(6) }" +
-                              $"{ (char)9553, -2 }{ TextFormat.ReplaceTextProductPrefix( product.Name ), -27 }" +
-                              $"{ (char)9553 }{ TextFormat.FormatPrice(product.Price), 10 }" + $" NoK" + $"{ (char)160 }" +
-                              $"{ (char)9553, -2 }{ TextColors.ExtractProtectionRankFlag(product.DiscountRange)}{ TextFormat.ReplaceTextPriceProtectionRank(product.DiscountRange), -3 }{ TextColors.Color.RS }" + $"{ (char)160 }" +
+                              $"{ (char)9553, -2 }{ TextFormat.FullProductName( product.Name ), -27 }" +
+                              $"{ (char)9553 }{ TextColors.OldPriceFlag(product.Price, product.DiscountPrice) }{ TextFormat.FormatPrice(product.Price), 10 }{ val }{ (char)160 }" +
+                              $"{ (char)9553, -2 }{ TextColors.RankFlag(product.DiscountRange)}{ TextFormat.RankFlag(product.DiscountRange), -3 }{ TextColors.Color.RS }" + $"{ (char)160 }" +
                               $"{ (char)9474, -2 }" + $"{ "formula line", -24 }" +
-                              $"{ (char)9553 }{ TextFormat.FormatPrice(product.DiscountPrice), 10 }" + $" NoK" + $"{ (char)160 }" +
+                              $"{ (char)9553 }{ TextColors.NewPriceFlag(product.Price, product.DiscountPrice) }{ TextFormat.FormatPrice(product.DiscountPrice), 10 }{ val }{ TextColors.Color.RS }{ (char)160 }" +
                               $"{ (char)9553 }" +
                               $"");
         }

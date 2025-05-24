@@ -43,7 +43,7 @@ public class TextFormat
         return line;
     }
     
-    public static string ReplaceTextPriceProtectionRank(int num)
+    public static string RankFlag(int num)
     {
         switch (num)
         {
@@ -58,7 +58,7 @@ public class TextFormat
         }
     }
     
-    public static string ReplaceTextProductPrefix(string name)
+    public static string FullProductName(string name)
     {
         switch (name)
         {

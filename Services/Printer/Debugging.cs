@@ -65,18 +65,19 @@ public class Debugging
                 $"{ product.CalcMonthlyFlow()[6], 10:F2}" +
                 $"");
         }
-
+        
+        TextFormat.Space(1);
+        
         foreach (var product in products)
         {
             Console.WriteLine(
-                $"{ TextFormat.PaddingRight(1) }" + 
-                $"{ product.CalcMonthlyFlowFlag()[0], -13}" +
-                $"{ product.CalcMonthlyFlowFlag()[1], -13}" +
-                $"{ product.CalcMonthlyFlowFlag()[2], -13}" +
-                $"{ product.CalcMonthlyFlowFlag()[3], -13}" +
-                $"{ product.CalcMonthlyFlowFlag()[4], -13}" +
-                $"{ product.CalcMonthlyFlowFlag()[5], -13}" +
-                $"{ product.CalcMonthlyFlowFlag()[6], -13}" +
+                $"{ TextFormat.PaddingRight(5) }" + 
+                $"{ product.CalcMonthlyFlag()[1], -13}" +
+                $"{ product.CalcMonthlyFlag()[2], -13}" +
+                $"{ product.CalcMonthlyFlag()[3], -13}" +
+                $"{ product.CalcMonthlyFlag()[4], -13}" +
+                $"{ product.CalcMonthlyFlag()[5], -13}" +
+                $"{ product.CalcMonthlyFlag()[6], -13}" +
                 $"");
         }
     }

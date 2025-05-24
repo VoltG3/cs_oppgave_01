@@ -11,19 +11,21 @@ public class ProductBalanse
         string h00 = "PRODUCT QUANTITY BALANSE";
         string h01 = "compare each 'month' with .prev'month'";
         string h02 = "RES: compare 'store' with last 'mont'";
-        string h03 = "- product decrease: normal flow";
-        string h04 = "- product decrease: warning, to slowly";
-        string h05 = "- product decrease: danger, flow stack";
-        string h06 = "- product decrease: perfect flow";
+        string h03 = $"Expected { TextColors.Color.YL_B }`normal flow`{ TextColors.Color.RS } is if the product stock will decrease by 10% each month";
+        string h04 = "- product decrease: normal flow";
+        string h05 = "- product decrease: warning, to slowly";
+        string h06 = "- product decrease: danger, flow stack";
+        string h07 = "- product decrease: perfect flow";
         
         Console.WriteLine($"{ TextFormat.PaddingRight(05) }{ TextColors.Color.CY }{ h00 }{ TextColors.Color.RS}");
         Console.WriteLine($"{ TextFormat.PaddingRight(06) }{ TextColors.Color.CY }{ TextFormat.PrintHorizontalSingleLine(94)}{ TextColors.Color.RS }");
         Console.WriteLine($"{ TextFormat.PaddingRight(10) }{ h01 }");
         Console.WriteLine($"{ TextFormat.PaddingRight(10) }{ h02 }");
-        Console.WriteLine($"{ TextFormat.PaddingRight(06) }{ TextColors.Color.CY }{ (char)9632 }{ TextColors.Color.RS }{ (char)160 }{ h03 }");
-        Console.WriteLine($"{ TextFormat.PaddingRight(06) }{ TextColors.Color.PR }{ (char)9632 }{ TextColors.Color.RS }{ (char)160 }{ h04 }");
-        Console.WriteLine($"{ TextFormat.PaddingRight(06) }{ TextColors.Color.RD }{ (char)9632 }{ TextColors.Color.RS }{ (char)160 }{ h05 }");
-        Console.WriteLine($"{ TextFormat.PaddingRight(06) }{ TextColors.Color.YL }{ (char)9632 }{ TextColors.Color.RS }{ (char)160 }{ h06 }");
+        Console.WriteLine($"{ TextFormat.PaddingRight(10) }{ h03 }");
+        Console.WriteLine($"{ TextFormat.PaddingRight(06) }{ TextColors.Color.CY_B }{ (char)9632 }{ TextColors.Color.RS }{ (char)160 }{ h04 }");
+        Console.WriteLine($"{ TextFormat.PaddingRight(06) }{ TextColors.Color.PR_B }{ (char)9632 }{ TextColors.Color.RS }{ (char)160 }{ h05 }");
+        Console.WriteLine($"{ TextFormat.PaddingRight(06) }{ TextColors.Color.RD_B }{ (char)9632 }{ TextColors.Color.RS }{ (char)160 }{ h06 }");
+        Console.WriteLine($"{ TextFormat.PaddingRight(06) }{ TextColors.Color.YL_B }{ (char)9632 }{ TextColors.Color.RS }{ (char)160 }{ h07 }");
         
         Console.WriteLine($"{ TextFormat.PaddingRight(6) }" + 
                           $"{ (char)9556 }{ TextFormat.PrintHorizontalDoubleLine(28)}" +
@@ -83,32 +85,24 @@ public class ProductBalanse
             string q04 = product.FlowStock[4].ToString();
             string q05 = product.FlowStock[5].ToString();
             string q06 = product.FlowStock[6].ToString();
-            string f01 = product.MonthlyFlowStockFlag[1];
-            string f02 = product.MonthlyFlowStockFlag[2];
-            string f03 = product.MonthlyFlowStockFlag[3];
-            string f04 = product.MonthlyFlowStockFlag[4];
-            string f05 = product.MonthlyFlowStockFlag[5];
-            string f06 = product.MonthlyFlowStockFlag[6];
+            string f01 = product.MonthlyFlag[1];
+            string f02 = product.MonthlyFlag[2];
+            string f03 = product.MonthlyFlag[3];
+            string f04 = product.MonthlyFlag[4];
+            string f05 = product.MonthlyFlag[5];
+            string f06 = product.MonthlyFlag[6];
+            string res = product.FinalFlag;
             
             Console.WriteLine($"{ TextFormat.PaddingRight(6) }" +
-                              $"{ (char)9553, -2 }{ TextFormat.ReplaceTextProductPrefix( product.Name ), -27 }" +
+                              $"{ (char)9553, -2 }{ TextFormat.FullProductName( product.Name ), -27 }" +
                               $"{ (char)9553 }{ TextColors.Color.CY }{ q00, 6 }{ TextColors.Color.RS }{ (char)160 }" +
-                              /*
-                              $"{ (char)9474 }{ TextColors.QuantityBalance(p00,  p01) }{ q01, 6 }{ TextColors.Color.RS }{ (char)160 }" + 
-                              $"{ (char)9474 }{ TextColors.QuantityBalance(p01,  p02) }{ q02, 6 }{ TextColors.Color.RS }{ (char)160 }" +
-                              $"{ (char)9474 }{ TextColors.QuantityBalance(p02,  p03) }{ q03, 6 }{ TextColors.Color.RS }{ (char)160 }" +
-                              $"{ (char)9474 }{ TextColors.QuantityBalance(p03,  p04) }{ q04, 6 }{ TextColors.Color.RS }{ (char)160 }" +
-                              $"{ (char)9474 }{ TextColors.QuantityBalance(p04,  p05) }{ q05, 6 }{ TextColors.Color.RS }{ (char)160 }" +
-                              $"{ (char)9474 }{ TextColors.QuantityBalance(p04,  p05) }{ q06, 6 }{ TextColors.Color.RS }{ (char)160 }" +
-                              $"{ (char)9553 }{ TextColors.QuantityBalanceResult(q00,  q06) }{ q06, 6 }{ TextColors.Color.RS }{ (char)160 }" +
-                              */
-                              
-                              $"{ (char)9474 }{ TextColors.MonthlyFlag( f01 )}{ q01, 6 }{ TextColors.Color.RS }{ (char)160 }" + 
-                              $"{ (char)9474 }{ TextColors.MonthlyFlag( f02 )}{ q02, 6 }{ TextColors.Color.RS }{ (char)160 }" +
-                              $"{ (char)9474 }{ TextColors.MonthlyFlag( f03 )}{ q03, 6 }{ TextColors.Color.RS }{ (char)160 }" +
-                              $"{ (char)9474 }{ TextColors.MonthlyFlag( f04 )}{ q04, 6 }{ TextColors.Color.RS }{ (char)160 }" +
-                              $"{ (char)9474 }{ TextColors.MonthlyFlag( f05 )}{ q05, 6 }{ TextColors.Color.RS }{ (char)160 }" +
-                              $"{ (char)9474 }{ TextColors.MonthlyFlag( f06 )}{ q06, 6 }{ TextColors.Color.RS }{ (char)160 }" +
+                              $"{ (char)9474 }{ TextColors.Flag( f01 )}{ q01, 6 }{ TextColors.Color.RS }{ (char)160 }" + 
+                              $"{ (char)9474 }{ TextColors.Flag( f02 )}{ q02, 6 }{ TextColors.Color.RS }{ (char)160 }" +
+                              $"{ (char)9474 }{ TextColors.Flag( f03 )}{ q03, 6 }{ TextColors.Color.RS }{ (char)160 }" +
+                              $"{ (char)9474 }{ TextColors.Flag( f04 )}{ q04, 6 }{ TextColors.Color.RS }{ (char)160 }" +
+                              $"{ (char)9474 }{ TextColors.Flag( f05 )}{ q05, 6 }{ TextColors.Color.RS }{ (char)160 }" +
+                              $"{ (char)9474 }{ TextColors.Flag( f06 )}{ q06, 6 }{ TextColors.Color.RS }{ (char)160 }" +
+                              $"{ (char)9553 }{ TextColors.Flag( res )}{ q06, 6 }{ TextColors.Color.RS }{ (char)160 }" +
                               $"{ (char)9553 }");
         }
         

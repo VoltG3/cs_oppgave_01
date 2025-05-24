@@ -1,4 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
+
+using cs_oppgave_01;
+
 namespace cs_oppgave_01;
 using System;
 using System.Runtime.InteropServices;
@@ -28,7 +31,7 @@ class Program
         //  Onload *.JSON data
         // ####################
         
-        string path="assets/products.json";
+        string path="Assets/products.json";
         var productsData = FileReader.JsonData(path);
         
         ProductStore productStore = new ProductStore();
@@ -52,7 +55,7 @@ class Program
         List<ProductItem> allProducts = productStore.GetAllProductData();
         ProductBalanse.Print(allProducts);
         PriceAligning.Print(allProducts);
-        Debugging.Print(allProducts);   
+        //Debugging.Print(allProducts);   
         
         TextFormat.Space(1);
     }
