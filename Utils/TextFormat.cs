@@ -4,6 +4,38 @@ namespace cs_oppgave_01;
 
 public class TextFormat
 {
+    public static string Formula(int discountRange, string finalFlag)
+    {
+        if (finalFlag == "flow_empty")
+            return "stock empty, no action";
+        
+        else if (finalFlag == "flow_quick" && discountRange == 3)
+            return "perfect, discount 99%";
+        
+        else if (finalFlag == "flow_quick" && discountRange == 2)
+            return "perfect, discount 33%";
+        
+        else if (finalFlag == "flow_quick" && discountRange == 1)
+            return "perfect, discount 33%";
+        
+        else if (finalFlag == "flow_stack" && discountRange == 3)
+            return "stack, discount 40%";
+        
+        else if (finalFlag == "flow_stack" && discountRange == 2)
+            return "slow flow, discount 15%";
+        
+        else if (finalFlag == "flow_stack" && discountRange == 1)
+            return "slow flow, discount 10%";
+        
+        else if (finalFlag == "flow_normal")
+            return "normal flow, no action";
+        
+        else
+        {
+            return "X";
+        }
+    }
+    
     public static string FormatPrice(float price)
     {
         var culture = new CultureInfo("no-NO");

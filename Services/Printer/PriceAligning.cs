@@ -17,12 +17,30 @@ public class PriceAligning
         string h03 = "new price not less that 4000 NoK";
         string h04 = "none new price protection";
         
+        string h05 = $"" +
+                     $"{TextColors.Color.YL_B}PERFECT FLOW: {TextColors.Color.RS}" +
+                     $"less that 10 items left,  " +
+                     $"{TextColors.Color.WH_B}DISCOUNT:{TextColors.Color.RS}" +
+                     $"{TextColors.Color.RD_B} HIG( -33%) {TextColors.Color.RS}" +
+                     $"{TextColors.Color.CY_B} MID( -66%) {TextColors.Color.RS}" +
+                     $"{TextColors.Color.YL_B} LOW( -99%) {TextColors.Color.RS}";
+        
+        string h06 = $"" +
+                     $"{TextColors.Color.RD_B}FLOW STACK:{TextColors.Color.RS}   " +
+                     $"more that 60% items left, " +
+                     $"{TextColors.Color.WH_B}DISCOUNT:{TextColors.Color.RS}" +
+                     $"{TextColors.Color.RD_B} HIG( -10%) {TextColors.Color.RS}" +
+                     $"{TextColors.Color.CY_B} MID( -15%) {TextColors.Color.RS}" +
+                     $"{TextColors.Color.YL_B} LOW( -40%) {TextColors.Color.RS}";
+        
         TextFormat.Space(1);
-        Console.WriteLine($"{ TextFormat.PaddingRight(04)}{ TextColors.Color.CY }{ h00 }{ TextColors.Color.RS}");
+        Console.WriteLine($"{ TextFormat.PaddingRight(06)}{ TextColors.Color.CY }{ h00 }{ TextColors.Color.RS}");
         Console.WriteLine($"{ TextFormat.PaddingRight(06)}{ TextColors.Color.CY }{ TextFormat.PrintHorizontalSingleLine(94)}{ TextColors.Color.RS }");
         Console.WriteLine($"{ TextFormat.PaddingRight(10)}{ h01 }{ TextColors.Color.RD }{ h0a }{ TextColors.Color.RS }{ h02 }");
         Console.WriteLine($"{ TextFormat.PaddingRight(10)}{ h01 }{ TextColors.Color.CY }{ h0b }{ TextColors.Color.RS }{ h03 }");
         Console.WriteLine($"{ TextFormat.PaddingRight(10)}{ h01 }{ TextColors.Color.YL }{ h0c }{ TextColors.Color.RS }{ h04 }");
+        Console.WriteLine($"{ TextFormat.PaddingRight(10)}{ h05 }");
+        Console.WriteLine($"{ TextFormat.PaddingRight(10)}{ h06 }");
         
         Console.WriteLine($" { TextFormat.PaddingRight(5) }" + 
                           $"{ (char)9556 }{ TextFormat.PrintHorizontalDoubleLine(28) }" +
@@ -57,7 +75,7 @@ public class PriceAligning
                               $"{ (char)9553, -2 }{ TextFormat.FullProductName( product.Name ), -27 }" +
                               $"{ (char)9553 }{ TextColors.OldPriceFlag(product.Price, product.DiscountPrice) }{ TextFormat.FormatPrice(product.Price), 10 }{ val }{ (char)160 }" +
                               $"{ (char)9553, -2 }{ TextColors.RankFlag(product.DiscountRange)}{ TextFormat.RankFlag(product.DiscountRange), -3 }{ TextColors.Color.RS }" + $"{ (char)160 }" +
-                              $"{ (char)9474, -2 }" + $"{ "formula line", -24 }" +
+                              $"{ (char)9474, -2 }" + $"{ TextFormat.Formula(product.DiscountRange, product.FinalFlag), -24 }" +
                               $"{ (char)9553 }{ TextColors.NewPriceFlag(product.Price, product.DiscountPrice) }{ TextFormat.FormatPrice(product.DiscountPrice), 10 }{ val }{ TextColors.Color.RS }{ (char)160 }" +
                               $"{ (char)9553 }" +
                               $"");

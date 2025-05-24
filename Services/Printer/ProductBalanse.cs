@@ -17,7 +17,7 @@ public class ProductBalanse
         string h06 = "- product decrease: danger, flow stack";
         string h07 = "- product decrease: perfect flow";
         
-        Console.WriteLine($"{ TextFormat.PaddingRight(05) }{ TextColors.Color.CY }{ h00 }{ TextColors.Color.RS}");
+        Console.WriteLine($"{ TextFormat.PaddingRight(06) }{ TextColors.Color.CY }{ h00 }{ TextColors.Color.RS}");
         Console.WriteLine($"{ TextFormat.PaddingRight(06) }{ TextColors.Color.CY }{ TextFormat.PrintHorizontalSingleLine(94)}{ TextColors.Color.RS }");
         Console.WriteLine($"{ TextFormat.PaddingRight(10) }{ h01 }");
         Console.WriteLine($"{ TextFormat.PaddingRight(10) }{ h02 }");

@@ -71,7 +71,7 @@ public class TextColors
     {
         if (oldPrice > newPrice)
         {
-            return Color.YL_B;
+            return Color.GR;
         }
         else
         {

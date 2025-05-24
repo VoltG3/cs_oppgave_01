@@ -11,6 +11,7 @@ public class ProductItem : IProductItem
     public string FinalFlag => CalcFinalFlag();
     public float FinalStockPct => (FlowStock[6] * 100f) / FlowStock[0];
     public bool IsLowStock => FlowStock[6] <= 10;
+    public bool IsStockEmpty => FlowStock[6] == 0;
     public int DiscountRange => Price > 8000 ? 1 : Price > 4000 ? 2 : 3;
     public float DiscountPrice => 
         CalcDiscount(
@@ -141,6 +142,10 @@ public class ProductItem : IProductItem
             3 => 0.40f,
             _ => 0.00f,
         };
+
+        // product count :: 0
+        if (IsStockEmpty)
+            return price;
         
         // product count :: if 10 or less than 10 left
         if (isLowStock)
