@@ -1,5 +1,5 @@
 # cs_oppgave_01
-<p>
-    <img src="https://github.com/VoltG3/cs_oppgave_01/screenshot_01.png" width="60%">
-    <img src="https://github.com/VoltG3/cs_oppgave_01/screenshot_02.png" width="60%">
-</p>
+
+<img src="https://github.com/VoltG3/cs_oppgave_01/screenshot_01.png" alt="screenshot_01.png" width="60%">
+<img src="https://github.com/VoltG3/cs_oppgave_01/screenshot_02.png" alt="screenshot_02.png" width="60%">
+
