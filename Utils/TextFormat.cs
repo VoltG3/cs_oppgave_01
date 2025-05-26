@@ -13,7 +13,7 @@ public class TextFormat
             return "perfect, discount 99%";
         
         else if (finalFlag == "flow_quick" && discountRange == 2)
-            return "perfect, discount 33%";
+            return "perfect, discount 66%";
         
         else if (finalFlag == "flow_quick" && discountRange == 1)
             return "perfect, discount 33%";

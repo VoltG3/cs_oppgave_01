@@ -6,7 +6,7 @@ public class ProductItem : IProductItem
     public string Name { get; set; }
     public float Price { get; set; }
     public List<int> FlowStock { get; set; }
-    public List<float> MonthlyFlowStockPct => CalcMonthlyFlow();
+    public List<float> MonthlyFlowStockPct => CalcMonthlyFlow(); // Only for debugging purpose
     public List<string> MonthlyFlag => CalcMonthlyFlag();
     public string FinalFlag => CalcFinalFlag();
     public float FinalStockPct => (FlowStock[6] * 100f) / FlowStock[0];
@@ -76,7 +76,6 @@ public class ProductItem : IProductItem
             {
                 flag.Add("UNKNOWN");
             }
-            
         }
         return flag;
     }
@@ -115,7 +114,6 @@ public class ProductItem : IProductItem
             {
                 flag = "UNKNOWN";
             }
-            
         }
         return flag;
     }
